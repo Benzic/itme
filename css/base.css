@@ -22,3 +22,13 @@ input, textarea, keygen, select, button {
     margin: 0em 0em 0em 0em;
     font: 13.3333px Arial;
 }
+a:hover{
+    color:#41CCB4;
+}
+a{
+    color: #666;
+}
+h1,h2,h3,h4,h5,h6,p{
+    font-size: 14px; font-style: normal;font-weight: 100;
+}
+

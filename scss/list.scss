@@ -1,0 +1,411 @@
+#header-w{
+	width: 100%; height: 21px;
+}
+#header{
+	width: 1200px; height: 21px; margin: 0 auto; line-height: 21px; font-size: 12px
+}
+.header-login{
+	float: left;
+}
+.header-login>span{
+	margin-left: 15px
+}
+#header ul li{float: left; margin-left: 20px;}
+#header a{
+	    color: #666;
+}
+#header a:hover{
+	color: #41ccb4
+}
+.header-menu{
+	float: right;
+}
+.header-menu>img{
+	margin-top: 2px;
+}
+.header-menu span{
+	color: #F5363E;
+}
+#operat-w{
+	width: 100%; height: 85px;
+}
+#operat{
+	width: 1200px; height: 100%; margin:12px auto;position: relative;
+}
+#operat a{
+	display: inline-block; float: left;width: 142px; height: 70px;position: absolute;
+    bottom: 0;
+}
+#operat .city{
+	width: 62px; height: 46px; display: inline-block; float: left; margin-top: 38px; margin-left: 162px
+}
+#operat .city span{
+	font-size: 14px;
+}
+#operat .city p{
+	width: 60px;
+    border: 1px solid #e8e8e8;
+    margin-top: 10px;
+    font-size: 12px;
+    text-align: center;
+    color: #999;
+    cursor: pointer;
+}
+#operat .city+div{
+	width: 500px;
+    height: auto;
+    overflow: hidden;
+    margin: 19px auto 19px 224px;
+    float: left;
+    position: relative;
+}
+#operat .city+div  p span{
+	margin-right: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+#operat .city+div .sel{
+	color: #41CCB4;
+}
+.search {
+    width: 496px;
+    height: 32px;
+    border: 2px solid #41ccb4;
+    margin-top: 10px;
+    position: relative;
+}
+#keywords{
+	width: 86%;
+    height: 15px;
+    line-height: 15px;
+    font-size: 12px;
+    color: #ccc;
+    border: none;
+    outline: medium;
+    margin-top: 9px;
+    padding-left: 15px;
+    border-right: 1px solid #e8e8e8;
+}
+.seinput{font-size: 18px;
+    color: #41CCB4;
+    border: none;
+    background: none;
+    margin-top: 4px;
+    float: right;
+    margin-right: 7px;
+    outline: medium;
+    cursor: pointer;}
+#operat .city+div+a{
+	position: absolute;bottom: 14px;right:30px;display: block;
+}
+#menu-Nav-w{
+	width: 100%;
+    height: auto;
+	border-bottom: 2px solid #41CCB4;
+}
+#menu-Nav{
+	width: 1200px;  
+    height: auto; margin: 0 auto;
+    position:relative;
+}
+#menu-Nav .menul{
+	width: 1200px;
+    height: 34px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    img{
+        position: absolute;right: 0;top: 0px;
+    }
+}
+#menu-Nav .menul li{
+    padding: 0 20px;
+    font-size: 15px;
+    color: #fff;
+    float: left;
+    line-height: 34px;
+    cursor: pointer;
+    margin-right: 10px;
+    position: relative;
+}
+#pullDown{
+	width: 190px; height: 533px; position: absolute; left: 0;z-index: 10; background: rgb(255, 255,255 );
+	clear: both;
+	padding-top: 13px;
+	img{
+		display: inline-block; margin-left: 6px;position: relative; top: 2px
+	}
+	li{
+		height: 38px; padding-left: 50px; line-height: 37px; font-size: 14px; 
+	}
+	a{
+		color: #999;
+	}
+	
+
+}
+#pullDown:hover{
+	background: rgb(242, 242, 242);
+}
+#pullDown:hover li{
+	background: rgb(242, 242, 242);
+}
+#pullDown li:hover{
+		box-shadow: 2px 0 8px rgba(200,200,200,0.9);
+		background: white;
+		border-left: 4px solid #41CCB4;
+}
+.pudownList{
+	width: 710px; height: 547px; position: absolute; left: 190px;z-index: 100;
+	background: white;
+    opacity: 1;
+   display: none;
+    .pudownList1{
+    	position: absolute;left: 0 ;top: 0; padding-top: 25px; background: white;
+    }
+    h3{
+    	font-size: 14px; font-weight: 100; margin-bottom: 20px;
+    }
+    h3 a{
+    	color:#999;
+    }
+    h3 a:hover{
+    	color: #41CCB4; 
+    }
+	
+    .first-part li {
+    	width: 120px;
+	    line-height: 30px;
+	    background-color: #f3f3f3;
+	    text-align: center; float: left; margin: 5px;
+    }
+    .second-part li { float: left; margin: 0 10px 30px 0px;  text-align: center; 
+    }
+    .second-part p{
+    	line-height: 25px;
+    }
+    .second-part li div{
+    	border: 1px solid #ccc; padding:0 5px;
+    }
+    .ecolor610{
+    	color:#41CCB4;
+    }
+
+}
+#main{
+    width: 1200px; height: auto;margin: 0 auto;
+    p{
+        width: 100%;height: 19px; margin-top: 15px; font-size: 14px
+    }
+    .select{
+        width: 1198px;
+        height: auto;
+        overflow: hidden;
+        border: 1px solid #E8E8E8;
+        border-bottom: none;
+        font-size: 12px;
+        color: #666;
+        margin: 15px 0;
+        div{
+            width: 100%;
+            overflow: hidden;
+            padding: 15px 0;
+            border-bottom: 1px solid #E8E8E8;
+            i{
+                margin-left: 30px;float: left;font-style: normal;
+            }
+            span{
+                width: auto;
+                height: 22px;
+                padding: 0 7px;
+                float: left;
+                margin-left: 25px;
+                cursor: pointer;
+                font-size: 14px;
+                margin-bottom: 15px;
+                color: #666;
+            }
+            .sel{
+                color: white;background: #41CCB4;
+            }
+            img{
+                width: 124px;
+                height: 61px;
+                border: 1px solid #E8E8E8;
+                margin-left: 15px;
+            }
+        }
+    }
+}
+.sortType{
+    width: 1200px; height: 26px; margin: 0 auto;
+    border: 1px solid #E8E8E8;
+    overflow: hidden;
+    padding: 10px 0;
+    span{
+            display: block;
+            float: left;
+            width: 72px;
+            height: 22px;
+            border: 1px solid #E8E8E8;
+            text-align: center;
+            line-height: 22px;
+            font-size: 14px;
+            color: #999;
+            margin-left: 15px;
+            cursor: pointer;
+    }
+    i{
+        float:right; font-style: normal; margin-right: 10px; color: #666;font-size: 14px
+    }
+}
+.list{
+    width: 100%;height: 289px;
+    li:first-child{
+        margin-left: 0;
+    }
+    li{
+        width: 260px; padding: 10px; overflow: hidden;float: left;border: 1px solid #E8E8E8;color: #333;
+            margin-top: 24px;    margin-bottom: 24px; margin-left: 24px;
+
+        img{
+            width: 260px; height: 195px;
+        }
+        h2{
+            margin-bottom: 10px;color: #333;
+        }
+        p{
+            color: #41ccb4;
+            span{
+                float: right;color: #666;
+            }
+        }
+        a{
+            text-decoration: underline;
+        }
+    }
+}
+.skip{
+    width: 210px; height: 35px; margin: 0 auto;clear: both; margin-bottom: 20px;
+    li{
+        width: 70px; height: 35px; line-height: 35px; text-align: center;float: left;border:1px solid #41ccb4;margin-left: 5px;font-size: 14px; 
+    }
+    li:nth-child(2){
+        width: 41px;
+    }
+    li a{
+        color: #41ccb4
+    }
+}
+.hot_sale{
+    width: 1200px; height: 312px; margin: 0 auto; margin-bottom: 20px;
+    h2{
+        font-size: 20px;color: #666;
+        span{
+            float: right;font-size: 14px;
+        }
+    }
+    .line1{
+        width: 1200px; background: #ccc;height: 1px;margin-bottom: 12px;
+    }
+    li:first-child{
+        margin-left: 0;
+    }
+    li{
+        float: left;width: 275px; height: 267px;margin-left: 25px;
+        img{
+            width: 275px; height: 207px;
+        }
+        p{
+            margin: 10px 0;
+        }
+        span{
+            display: block;color: #41ccb4;font-size: 14px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.foot-w{
+    width: 100%;
+    height: 160px;
+    background: #333;
+    overflow: hidden;
+}
+.foot{
+    width: 1200px; margin: 0 auto;   position: relative; 
+}
+
+.foot .p1{
+    color: #ccc;margin-top: 40px;
+    
+}
+.foot a{
+    color: #ccc;margin-top: 40px;
+}
+.foot a:hover{
+    color: #41ccb4
+}
+.foot span{
+    margin: 0 10px;
+}
+.foot .p2{
+    width: auto;
+    overflow: hidden;
+    font-size: 12px;
+    color: #999;
+    margin-top: 15px;
+}
+.foot .p3{
+    width: auto;
+    overflow: hidden;
+    font-size: 12px;
+    color: #999;
+    margin-top: 15px;
+}
+.foot div>div{
+    float: right; position: absolute; top: 0; right: 120px; color: #999
+}
+.foot div>.d2{
+    right: 0px;
+}
