@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0044)http://passport.gojiaju.com/account/register -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+    
+    <title>GO佳居</title>
+    <script src="./sign-in_files/jquery-1.10.2.min.js.下载"></script>
+    <script src="./sign-in_files/mainScrpit.js.下载"></script>
+    
+    <link href="./sign-in_files/main.css" rel="stylesheet">
+    <link href="./sign-in_files/iframeStyle.css" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="operat">
+        <a href="http://www.gojiaju.com/" target="_blank">
+            <img src="./sign-in_files/logo.jpg">
+        </a>
+        <img src="./sign-in_files/big.jpg">
+        <a href="http://passport.gojiaju.com/account/register">
+            
+        </a>
+    </div>
+
+    
+<script>
+
+    function onSuccess(data) {
+
+    }
+</script>
+<!--中间部分-->
+<div class="container login">
+    <!--中间主体部分-->
+    <div class="main register">
+        <img src="./sign-in_files/zc.jpg">
+        <div>
+<form action="http://passport.gojiaju.com/account/register" method="post" novalidate="novalidate">                <script>
+                    function getValidateCode() {
+
+                        var src = "/content/images/head/pass.jpg";
+                        var message = "验证码已发送";
+                        var _thisObj = $(this);
+
+                        var mobileNum = $("#PhoneNum").val();
+                        if (!mobileNum || mobileNum == '请输入手机号') {
+                            return false;
+                        }
+                        var code = $('#txtCode').val();
+                        if (code === '') {
+                            return false;
+                        }
+                        $.ajax({
+                            type: "post",
+                            url: "/account/GetVerifyCodeWhenVerifyNewMobile",
+                            data: { mobile: mobileNum, code: code },
+                            dataType: "json",
+                            error: function (data) {
+                                alert(data);
+                            },
+                            success: function (data) {
+
+                                if (!data.success) {
+                                    src = "/content/images/head/error.jpg";
+                                    alert(data.message);
+                                }
+                                else {
+                                    waittingForNewCode();
+                                }
+                                $('#confirmContainer').hide();
+                            }
+                        });
+                    }
+                    var seconds = 60;
+                    var stHandler;
+                    function waittingForNewCode() {
+                        if (seconds != 1) {
+                            seconds--;
+                            $('#btnGetValidateCode').attr('disabled', true);
+                            $('#btnGetValidateCode').val(seconds + '秒后重新发送');
+                            stHandler = setTimeout(waittingForNewCode, 1000);
+                        } else {
+                            seconds = 60;
+                            $('#btnGetValidateCode').val('获取验证码');
+                            $('#btnGetValidateCode').attr('disabled', false);
+                            clearTimeout(stHandler);
+                        }
+                    }
+                    $(document).ready(function () {
+
+                        $('#confirmContainer').hide();
+
+                        $('#btnGetValidateCode').click(function () {
+                            var mobileNum = $("#PhoneNum").val();
+                            if (!mobileNum || mobileNum == '请输入手机号') {
+                                return false;
+                            }
+                            $('#txtCode').val('');
+                            var position = $('#btnGetValidateCode').position();
+
+                            $('#confirmContainer').css({ zindex: '9998', position: "absolute", 'top': position.top + 50, 'left': position.left });
+                            $('#confirmContainer').show();
+                            var imagePath = "/account/GetValidatorGraphics?time=" + (new Date()).getTime();
+                            $('#imgSessionCode').attr('src', imagePath);
+                        });
+                        $('#btnSessionCode').click(function () {
+                            getValidateCode();
+                        });
+
+                        $('#btnSave').attr('disabled', true);
+
+                        $('#btnGetValidateCode').attr('disabled', false);
+                        $('#btnSave').css("background-color", "#999");
+
+                        $('#chkLicense').click(function () {
+                            if (this.checked) {
+                                $('#btnSave').css("background-color", "#41CCB4");
+                            } else {
+                                $('#btnSave').css("background-color", "#999");
+                            }
+
+                            $('#btnSave').attr('disabled', !this.checked);
+
+                        });
+
+
+                        $('#btnSave').click(function () {
+
+                            var result = true;
+
+                            $('#UserNameTip').find('i').html('');
+                            $('#UserNameTip').find('img').attr('src', '');
+                            $('#PhoneNumTip').find('i').html('');
+                            $('#PhoneNumTip').find('img').attr('src', '');
+                            $('#ValidateCodeTip').find('i').html('');
+                            $('#ValidateCodeTip').find('img').attr('src', '');
+
+                            $('#PasswordTip').find('i').html('');
+                            $('#PasswordTip').find('img').attr('src', '');
+                            $('#ConfirmPasswordTip').find('i').html('');
+                            $('#ConfirmPasswordTip').find('img').attr('src', '');
+
+                            //var userName = $('#UserName').val();
+                            //var defaultUserName = $('#UserName').attr("orginal");
+                            //if (userName == defaultUserName || userName == '') {
+                            //    $('#UserNameTip').find('i').html('请输入用户名!');
+                            //    $('#UserNameTip').find('img').attr('src', '/content/images/head/error.jpg');
+                            //    result = false;
+                            //}
+
+                            //var phoneNum = $('#PhoneNum').val();
+                            //var defaultPhoneNum = $('#PhoneNum').attr("orginal");
+                            //if (phoneNum == defaultPhoneNum || phoneNum == '') {
+                            //    $('#PhoneNumTip').find('i').html('请输入手机号码!');
+                            //    $('#PhoneNumTip').find('img').attr('src', '/content/images/head/error.jpg');
+                            //    result = false;
+                            //}
+
+                            //var validateCodeTip = $('#ValidateCode').val();
+                            //var defaultValidateCodeTip = $('#ValidateCode').attr("orginal");
+                            //if (validateCodeTip == defaultValidateCodeTip || validateCodeTip == '') {
+                            //    $('#ValidateCodeTip').find('i').html('请输入正确的验证码!');
+                            //    $('#ValidateCodeTip').find('img').attr('src', '/content/images/head/error.jpg');
+                            //    result = false;
+                            //}
+
+                            //var password = $('#Password').val();
+                            //var defaultPassword = $('#Password').attr("orginal");
+                            //if (password == defaultPassword || password == '') {
+                            //    $('#PasswordTip').find('i').html('请输入密码!');
+                            //    $('#PasswordTip').find('img').attr('src', '/content/images/head/error.jpg');
+                            //    result = false;
+                            //}
+
+                            //var confirmPassword = $('#ConfirmPassword').val();
+                            //if (confirmPassword == '' || confirmPassword != password) {
+                            //    $('#ConfirmPasswordTip').find('i').html('两次输入的密码不相同!');
+                            //    $('#ConfirmPasswordTip').find('img').attr('src', '/content/images/head/error.jpg');
+                            //    result = false;
+                            //}
+
+                            return result;
+                        });
+                    });
+                </script>
+<input name="__RequestVerificationToken" type="hidden" value="Dij2NgIR3iYNBwgFmi8VW6RA3qIp9XbY6WQBCZn2BHS1zY93CPUgPpgLuvQ5Mr50RvsyrGatLn4ak806wjKoYsS_S1Y1">                <input type="hidden" name="appKey" id="appKey" value="6DD145F2-276E-E411-9A15-331219B182C6">
+                <p>
+                    <span>
+                        <img src="./sign-in_files/zc1.jpg" style="margin-top: 12px;">
+                        <input class="name" data-val="true" data-val-length="这个 用户名称 长度最小长度为 3 个字符。" data-val-length-max="16" data-val-length-min="3" data-val-required="用户名称不能为空" id="UserName" name="UserName" placeholder="请输入用户名" type="text" value="">
+                    </span>
+
+                    <span class="tips" id="UserNameTip">
+                        <img src="http://passport.gojiaju.com/account/register">
+                        <i></i>
+                    </span>
+                </p>
+                <p>
+                    <span>
+
+                        <img src="./sign-in_files/sj.jpg" style="margin-top: 12px;">
+                        <input type="text" id="PhoneNum" name="PhoneNum" placeholder="请输入手机号" class="phone">
+                    </span>
+                    <span class="tips" id="PhoneNumTip">
+                        <img src="http://passport.gojiaju.com/account/register">
+                        <i></i>
+                    </span>
+                </p>
+                <p class="yz">
+                    <input type="text" name="ValidateCode" id="ValidateCode" placeholder="请输入6位验证码">
+                    <input type="button" id="btnGetValidateCode" value="获取验证码">
+
+                    <span class="tips" id="ValidateCodeTip">
+                        <img src="http://passport.gojiaju.com/account/register" style=" margin-left: 22px;">
+                        <i style="color:#999;"></i>
+                    </span>
+
+
+
+                </p>
+                <div id="confirmContainer" style="padding: 10px; border: 1px solid rgb(65, 204, 180); width: 150px; background-color: rgb(255, 255, 255); display: none;">
+                    <h5 style="color:#999; font-weight:normal;">请输入验证码</h5>
+                    <div style="overflow:hidden; padding:10px 0;">
+
+                        <input type="text" name="code" id="txtCode" style="margin-top:3px;float:left; width:80px; height:22px; border:solid 1px #e4e4e4; margin-right:10px;">
+                        <img style="float:left;padding:4px 0;" id="imgSessionCode">
+                    </div>
+                    <input type="button" id="btnSessionCode" style="background-color: rgb(65, 204, 180);height:30px;width:130px;border:none;font-size:15px;color:white;" value="获取手机验证码">
+                </div>
+                <p>
+                    <span>
+
+                        <img src="./sign-in_files/zc2.jpg" style="margin-top: 12px;">
+                        <input type="password" id="Password" maxlength="20" name="Password" placeholder="请输入密码" class="password">
+                    </span>
+                    <span class="tips" id="PasswordTip">
+                        <img src="http://passport.gojiaju.com/account/register">
+                        <i></i>
+                        <em></em>
+                        <em></em>
+                        <em></em>
+                    </span>
+                </p>
+                <p>
+                    <span>
+                        <img src="./sign-in_files/zc2.jpg" style="margin-top: 12px;">
+                        <input type="password" maxlength="20" id="ConfirmPassword" placeholder="确认密码" name="ConfirmPassword" class="confirm">
+                    </span>
+
+                    <span class="tips" id="ConfirmPasswordTip">
+                        <img src="http://passport.gojiaju.com/account/register">
+                        <i></i>
+                    </span>
+                </p>
+                <p>
+                    <input id="chkLicense" type="checkbox">
+                    已阅读同意<a href="http://passport.gojiaju.com/account/register#">《GO佳居用户协议》</a>
+                </p>
+                <p>
+                    <input type="submit" id="btnSave" value="免费注册" disabled="disabled" style="background-color: rgb(153, 153, 153);">
+                    <span>我已有账号<a href="http://passport.gojiaju.com/account/login">立即登录&gt;</a></span>
+                </p>
+</form>        </div>
+    </div>
+
+</div>
+
+<script>
+    var result = '';
+    if (result !== '') {
+        alert(result);
+    }
+
+</script>
+    <!--底部-->
+    <div class="foot">
+        <div>
+            <p>
+                <a href="http://passport.gojiaju.com/account/register" target="_top">关于GO佳居</a>
+                <span>|</span>
+                <a href="http://passport.gojiaju.com/account/register" target="_top">联系我们</a>
+                <span>|</span>
+                <a href="http://passport.gojiaju.com/account/register" target="_top">网站地图</a>
+                <span>|</span>
+                <a href="http://passport.gojiaju.com/account/register" target="_top">人才招聘</a>
+                <span>|</span>
+                <a href="http://passport.gojiaju.com/account/register" target="_top">招商代理</a>
+            </p>
+            <p>GO佳居 家具网(www.gojiaju.com)-中国最大的家具品牌导购平台! 网站备案号:苏 ICP备11031454号-7</p>
+            <p>© 2008-2016 苏州艾博软件科技有限公司 版权所有 服务热线(0512-82278555)</p>
+            <div>
+                <img src="./sign-in_files/wx.jpg">
+                
+                <p>GO家具官方微信</p>
+            </div>
+            <div>
+                <img src="./sign-in_files/m.jpg">
+                <p>GO家具手机浏览</p>
+            </div>
+        </div>
+    </div>
+    <script src="./sign-in_files/jquery"></script>
+<script src="./sign-in_files/jqueryval"></script>
+
+    <script src="./sign-in_files/bootstrap"></script>
+
+    
+
+</body></html>
