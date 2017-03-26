@@ -29,10 +29,32 @@
 #operat-w{
 	width: 100%; height: 85px;
 }
+.cityList {
+    width: 500px;
+    height: auto;
+    overflow: hidden;
+    padding-bottom: 20px;
+    border: 1px solid #e8e8e8;
+    position: absolute;
+    top: 84.5px;
+    left: 162px;
+    font-size: 14px;
+    color: #333;
+    background: #fff;
+    display: none;
+    z-index: 10000;
+    a{
+    	margin-left: 17px;
+	    margin-right: 17px;
+	    margin-top: 20px;
+	    display: inline-block;
+	    color: #333;
+    }
+}
 #operat{
 	width: 1200px; height: 100%; margin:12px auto;position: relative;
 }
-#operat a{
+#operat .logo{
 	display: inline-block; float: left;width: 142px; height: 70px;position: absolute;
     bottom: 0;
 }
@@ -161,7 +183,7 @@
     opacity: 1;
    display: none;
     .pudownList1{
-    	position: absolute;left: 0 ;top: 0; padding-top: 25px; background: white;
+    	position: absolute;left: 0 ;top: 0; padding-top: 25px; background: white; padding-left: 20px;
     }
     h3{
     	font-size: 14px; font-weight: 100; margin-bottom: 20px;
@@ -197,14 +219,36 @@
 	background: #F2f2f2;
 }
 #banner{
-	width: 1200px;height: 580px;
-    overflow: hidden;
+	width: 100%;height: 580px;
     margin: 0 auto;
     position: relative;
+    overflow: hidden;
+    #banner_img li{height: 400px; position: relative;
+    	img{
+    		height: 400px; 
+    	}
+    }
+    #banner_img{
+    	height: 400px;
+    }
+    .circles{position: absolute;left: 700px; bottom: 200px;
+    	
+    	.cir{
+    		width: 20px;height: 20px; background: white; border-radius: 50%; float: left; margin-left: 20px;
+    	}
+    	.cur{
+    		background: #41CCB4;
+    	}
+    }
+    .child{
+    	width: 1200px; margin: 0 auto; height: 400px;
+    }
+    .child1{
+    	
+    }
+
 }
-#banner .child{
-	position: absolute;
-}
+
 .right-pic{
 	position: absolute;right: 0;top: 0; width: 260px; height: 402px
 }

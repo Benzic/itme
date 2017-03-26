@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Documen</title>
 	<link rel="stylesheet" type="text/css" href="dist/css/index.css">
 	<link rel="stylesheet" type="text/css" href="dist/css/base.css">
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 </head>
 <body>
 	<div id="header-w">
@@ -25,12 +26,12 @@
 	</div>
 	<div id="operat-w">
 		<div id="operat">
-				<a href="#"><img src="images/logo.jpg" alt="logo" id="logo"></a>
+				<a href="#" class="logo"><img src="images/logo.jpg" alt="logo" id="logo"></a>
 			    <div class="city">
 			        <span>
 						全国站
 			        </span>
-			        <p>切换城市</p>
+			        <p id="checkCity">切换城市</p>
 			    </div>
 			    <div>
 			        <p>
@@ -42,7 +43,7 @@
 			        </p>
 				    <div class="search">
 						<form action="" method="post">                
-							<input name="keywords" id="keywords" type="text" autocomplete="off">
+							<input title="keywords" id="keywords" type="text" autocomplete="off">
 			                <input type="submit" value="搜索" class="seinput">
 						</form>        
 					</div>
@@ -51,6 +52,21 @@
 				<a>
 					<img src="images/youhuiquan.jpg">
 				</a>
+                <div class="cityList">
+                    <a href="#" class="sel">全国站</a>
+                    <a href="#" class="">吕梁站</a>
+                    <a href="#" class="">天津站</a>
+                    <a href="#" class="">金华站</a>
+                    <a href="#" class="">郑州站</a>
+                    <a href="#" class="">盐城</a>
+                    <a href="#" class="">扬州</a>
+
+                    <a href="#" class="">南京站</a>
+                    <a href="#" class="">佛山站</a>
+                    <a href="#" class="">东莞站</a>
+                    <a href="#">查看所有城市>></a>
+                </div>
+
 		</div>
 	</div>
 	<div id="menu-Nav-w">
@@ -70,67 +86,67 @@
        		</ul>
         <div id="pullDown">
 		        <ul class="pullDownList" style="background-color: rgb(255, 255, 255);">
-		            <li class="">
+		            <li class="" name="0">
 		            	<img src="images/icon/tb1.gif">
 		                <a href="#">卧室家具</a>
 		            </li>
-		            <li class="">
+		            <li class="" name="1">
 		            	<img src="images/icon/tb2.gif">
 		                <a href="#">客厅家具</a>
 		            </li>
-		            <li class="">
+		            <li class="" name="2">
 		            	<img src="images/icon/tb3.gif">
 		                <a href="#">餐厅家具</a>
 		            </li>
-		            <li class="">
+		            <li class="" name="3">
 		            	<img src="images/icon/tb4.gif">
 		                <a href="#">书房家具</a>
 		            </li>
-		            <li class="menulihover menuliselected">
+		            <li class="" name="4">
 		            	<img src="images/icon/tb5.gif">
 		                <a href="#">门厅家具</a>
 		            </li>
-		            <li class="">
+		            <li class="" name="5">
 		            	<img src="images/icon/tb6.gif">
 		                <a href="#">儿童家具</a>
 		            </li>
-		            <li class="">
+		            <li class="" name="6">
 		            	<img src="images/icon/tb7.gif">
 		                <a href="#">休闲家具</a>
 		            </li>
 
-		            <li class="">
+		            <li class="" name="7">
 		            	<img src="images/icon/tb8.gif">
 		                <a href="#">户外家具</a>
 		            </li>
-		            <li class="">
+		            <li class="" name="8">
 		            	<img src="images/icon/tb9.gif">
 		                <a href="#">酒店家具</a>
 		            </li>
-		            <li class="">
+		            <li class="" name="9">
 		            	<img src="images/icon/tb10.gif">
 		                <a href="#">工程家具</a>
 		            </li>
-		            <li class="">
+		            <li class="" name="10">
 		            	<img src="images/icon/tb11.gif">
 		                <a href="#">红木家具</a>
 		            </li>
-		            <li class="">
+		            <li class="" name="11">
 		            	<img src="images/icon/tb12.gif">
 		                <a href="#">办公家具</a>
 		            </li>
-		            <li class="">
+		            <li class="" name="12">
 		            	<img src="images/icon/tb13.gif">
 		                <a href="#">定制家具</a>
 		            </li>
-				    <li class="">
+				    <li class="" name="13">
 				    	<img src="images/icon/tb14.gif">
 				        <a href="#">学校用具</a>
 					</li>
 		        </ul>
 			</div>
 			<div class="pudownList">
-				 <div class="pudownList1 ">
+				 <div class="pudownList1 " >
                     <h3><a href="#">卧室家具</a></h3>
                     <ul class="first-part">
                         		<li><a href="#" class="ecolor610">全部</a></li>
@@ -185,8 +201,8 @@
                                 </li>
                     </ul>
                 </div>
-                <div class="pudownList1 ">
-                    <h3><a href="#">卧室家具</a></h3>
+                <div class="pudownList1 " >
+                    <h3><a href="#">客厅家具</a></h3>
                     <ul class="first-part">
                     			<li><a href="#" class="ecolor610">全部</a></li>
                         		<li><a href="#">罗汉床</a></li>
@@ -243,7 +259,7 @@
                     </ul>
                 </div>
                 <div class="pudownList1 ">
-                    <h3><a href="#">卧室家具</a></h3>
+                    <h3><a href="#">餐厅家具</a></h3>
                     <ul class="first-part">
                         		<li><a href="#" class="ecolor610">全部</a></li>
                                 <li><a href="#">餐桌</a></li>
@@ -293,7 +309,7 @@
                     </ul>
                 </div>
                 <div class="pudownList1 ">
-                    <h3><a href="#">卧室家具</a></h3>
+                    <h3><a href="#">书房家具</a></h3>
                     <ul class="first-part">
                         		<li><a href="#" class="ecolor610">全部</a></li>
                                 <li><a href="#">书桌椅</a></li>
@@ -339,7 +355,7 @@
                     </ul>
                 </div>
                 <div class="pudownList1 ">
-                    <h3><a href="#">卧室家具</a></h3>
+                    <h3><a href="#">门厅家具</a></h3>
                     <ul class="first-part">
                         		<li><a href="#" class="ecolor610">全部</a></li>
                                <li><a href="#">盆景架</a></li>
@@ -387,7 +403,7 @@
                     </ul>
                 </div>
                 <div class="pudownList1 ">
-                    <h3><a href="#">卧室家具</a></h3>
+                    <h3><a href="#">儿童家具</a></h3>
                     <ul class="first-part">
                         		<li><a href="#" class="ecolor610">全部</a></li>
                                  <li><a href="#">儿童椅</a></li>
@@ -435,7 +451,7 @@
                     </ul>
                 </div>
                 <div class="pudownList1 ">
-                    <h3><a href="#">卧室家具</a></h3>
+                    <h3><a href="#">休闲家具</a></h3>
                     <ul class="first-part">
                         		<li><a href="#" class="ecolor610">全部</a></li>
                                  <li><a href="#">茶桌/茶台</a></li>
@@ -486,7 +502,7 @@
                     </ul>
                 </div>
                 <div class="pudownList1 ">
-                    <h3><a href="#">卧室家具</a></h3>
+                    <h3><a href="#">户外家具</a></h3>
                     <ul class="first-part">
                         		<li><a href="#" class="ecolor610">全部</a></li>
                                 <li><a href="#">凉亭</a></li>
@@ -536,7 +552,7 @@
                     </ul>
                 </div>
                 <div class="pudownList1 ">
-                    <h3><a href="#">卧室家具</a></h3>
+                    <h3><a href="#">酒店家具</a></h3>
                     <ul class="first-part">
                         		<li><a href="#" class="ecolor610">全部</a></li>
                                 <li><a href="#">酒店卧房</a></li>
@@ -584,7 +600,7 @@
                     </ul>
                 </div>
                 <div class="pudownList1 ">
-                    <h3><a href="#">卧室家具</a></h3>
+                    <h3><a href="#">工程家具</a></h3>
                     <ul class="first-part">
                         		<li><a href="#" class="ecolor610">全部</a></li>
                                  <li><a href="#">足浴家具</a></li>
@@ -635,7 +651,7 @@
                     </ul>
                 </div>
                 <div class="pudownList1 ">
-                    <h3><a href="#">卧室家具</a></h3>
+                    <h3><a href="#">红木家具</a></h3>
                     <ul class="first-part">
                         		<li><a href="#" class="ecolor610">全部</a></li>
                                 <li><a href="#">榆木古典</a></li>
@@ -685,7 +701,7 @@
                     </ul>
                 </div>
                 <div class="pudownList1 ">
-                    <h3><a href="#">卧室家具</a></h3>
+                    <h3><a href="#">办公家具</a></h3>
                     <ul class="first-part">
                         		<li><a href="#" class="ecolor610">全部</a></li>
                                 <li><a href="#">会议桌</a></li>
@@ -743,7 +759,7 @@
                     </ul>
                 </div>
                 <div class="pudownList1 ">
-                    <h3><a href="#">卧室家具</a></h3>
+                    <h3><a href="#">定制家具</a></h3>
                     <ul class="first-part">
                         		<li><a href="#" class="ecolor610">全部</a></li>
                                 <li><a href="#">定制衣柜</a></li>
@@ -789,7 +805,7 @@
                     </ul>
                 </div>
                 <div class="pudownList1 ">
-                    <h3><a href="#">卧室家具</a></h3>
+                    <h3><a href="#">学校用具</a></h3>
                     <ul class="first-part">
                         		<li><a href="#" class="ecolor610">全部</a></li>
                                 <li><a href="#">学生课桌</a></li>
@@ -840,13 +856,13 @@
 	<div id="banner-w">
 		<div id="banner">
 			<div class="banner-pic">
-				<ul id="banner_img" class="" style="position: relative; left: 0px; margin-left: 0px; width: 15224px;">
+				<ul id="banner_img" class="" style="position: relative; left: 0px; margin-left: 0px;height: 400px;">
 							<li style="background: rgb(253, 196, 211); width: 1903px; float: left;">
                                 <div class="" >
                                         <div class="child child0" >
                                             <img src="images/562a0026-b8d1-420a-9e29-4f1466a53efb.jpg" >
                                         </div>
-                                        <div class="child"  style="left: 0px; top: 0px; margin-left: 0px;">
+                                        <div class="child child1"  style="left: 0px; top: 0px; margin-left: 0px;">
                                             <img src="images/bd7bbd54-3623-4841-b9e8-e3f010500824.png" >
                                         </div>
 
@@ -873,51 +889,14 @@
                                         <div class="child child0" >
                                             <img src="images/6c28e4b2-5135-4e15-b55a-1c199e40f58b.jpg" >
                                         </div>
-                                        <div class="child"  style="left: 0px; top: 0px; margin-left: 0px;">
-                                            <img src="images/75b0d862-a1c0-421e-af7f-db76f5d82a08.png" >
-                                        </div>
-
-                                </div>
-                            </li><li style="background: rgb(253, 196, 211); width: 1903px; float: left;">
-                                <div class="" >
-
-                                        <div class="child child0" >
-                                            <img src="images/562a0026-b8d1-420a-9e29-4f1466a53efb.jpg" >
-                                        </div>
-                                        <div class="child"  style="left: 0px; top: 0px; margin-left: 0px;">
-                                            <img src="images/bd7bbd54-3623-4841-b9e8-e3f010500824.png" >
-                                        </div>
-
-                                </div>
-                            </li><li style="background: rgb(175, 219, 244); width: 1903px; float: left;">
-                                <div class="" >
-
-                                        <div class="child child0" >
-                                            <img src="images/36881621-d5ec-4e7b-bc91-0ef4f62577a2.jpg" >
-                                        </div>
-
-                                </div>
-                            </li><li style="background: rgb(247, 180, 1); width: 1903px; float: left;">
-                                <div class="" >
-
-                                        <div class="child child0" >
-                                            <img src="images/3632cbc5-e3f6-4458-90a8-eef63abb69ee.jpg" >
-                                        </div>
-
-                                </div>
-                            </li><li style="background: rgb(21, 185, 176); width: 1903px; float: left;">
-                                <div class="" >
-
-                                        <div class="child child0" >
-                                            <img src="images/6c28e4b2-5135-4e15-b55a-1c199e40f58b.jpg" >
-                                        </div>
-                                        <div class="child"  style="left: 0px; top: 0px; margin-left: 0px;">
+                                        <div class="child child1"  style="left: 0px; top: 0px; margin-left: 0px;">
                                             <img src="images/75b0d862-a1c0-421e-af7f-db76f5d82a08.png" >
                                         </div>
 
                                 </div>
                             </li>
                     </ul>
+                    <div class="circles"></div>
                     <div class="right-pic">
 		                <div class="couponScroll" >
 		                    <ul style=" width:260px;">
@@ -3785,7 +3764,7 @@
                                 <span><a href="http://www.zhuqu.com/" target="_blank">家居设计效果图大全</a></span>
                                 <span><a href="http://lvliang.gojiaju.com/" target="_blank">吕梁家具</a></span>
                                 <span><a href="http://dzr.shop.gojiaju.com/" target="_blank">大自然床垫</a></span>
-                                <span><a href="http://zhaoshang.chinamenwang.com/" target="_blank">木门加盟</a></span>
+                                <span><a href="http://zhaoshang.chititlenwang.com/" target="_blank">木门加盟</a></span>
                                 <span><a href="http://bbs.17house.com/" target="_blank">装修论坛</a></span>
                                 <span><a href="http://www.d17.cc/" target="_blank">第一枪网</a></span>
                                 <span><a href="http://www.coatingol.com/" target="_blank">涂料在线</a></span>
@@ -3806,7 +3785,7 @@
                                 <span><a href="http://www.chinafloor.cn/" target="_blank"> 木地板</a></span>
                                 <span><a href="http://www.qizuang.com/gonglue/" target="_blank">装修攻略</a></span>
                                 <span><a href="http://www.jia360.com/" target="_blank">腾讯家居</a></span>
-                                <span><a href="http://www.chinamenwang.com/" target="_blank">木门</a></span>
+                                <span><a href="http://www.chititlenwang.com/" target="_blank">木门</a></span>
                                 <span><a href="http://www.whjzw.net/" target="_blank">武汉装修</a></span>
                         <span><a href="http://www.gojiaju.com/home/links" target="_blank">更多&gt;&gt;</a></span>
 
@@ -3844,6 +3823,6 @@
         </div>
     </div> 
    
-    
+<script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
