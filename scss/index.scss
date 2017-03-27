@@ -171,12 +171,18 @@
 }
 #pullDown:hover li{
 	background: rgb(242, 242, 242);
+	.sonToP{
+			box-shadow: 2px 0 8px rgba(200,200,200,0.9)!important;
+			background: white!important;
+			border-left: 4px solid #41CCB4!important;
+	}
 }
 #pullDown li:hover{
 		box-shadow: 2px 0 8px rgba(200,200,200,0.9);
 		background: white;
 		border-left: 4px solid #41CCB4;
 }
+
 .pudownList{
 	width: 710px; height: 547px; position: absolute; left: 190px;z-index: 100;
 	background: white;
@@ -243,11 +249,18 @@
     .child{
     	width: 1200px; margin: 0 auto; height: 400px;
     }
-    .child1{
-    	
-    }
+    .container_box{
+    	width: 1200px; margin: 0 auto;  position: relative; top: -400px; height: 400px;overflow: hidden;
+    	#banner_img2{
+    		padding-left: 189px; position: absolute;left: 0; top: 0;  
+    		li {
+    			float: left; width: 1011px; height: 402px;
+    		}
+		}
+	}
 
 }
+
 
 .right-pic{
 	position: absolute;right: 0;top: 0; width: 260px; height: 402px
@@ -397,10 +410,10 @@ img{
 	    background: #fff;
 	    display: inline-block;
 	}
-	.current a{
-		border: 1px solid #41CCB4;
+	.currenta{
+		border: 1px solid #41CCB4!important;
 	}
-	.current img{
+	.brand_con .brand_nav li img{
 		width: 20px;
 	    height: 9px;
 	    position: absolute;
@@ -408,23 +421,70 @@ img{
 	    left: 50%;
 	    margin-left: -10px;
 	    bottom: 1.5px;
+	    display: none;
+	}
+	.brand_con .brand_nav li{
+			.currentimg{
+			display: block!important;
+			width: 20px;
+		    height: 9px;
+		    position: absolute;
+		    bottom: 1px;
+		    left: 50%;
+		    margin-left: -10px;
+		    bottom: 1.5px;
+		}
 	}
 }
 .brand_bottom{
 		width: 1200px; height: 564px; position: relative; 
 		.brand_left{
-			width: 920px; height: 564px; position: absolute;left: 0;top: 0;margin-top: 20px;			
-		}	
+			width: 920px; height: 564px; position: absolute;left: 0;top: 0;margin-top: 20px; display: none;		
+		}
+		div:first-child{
+			display: block;
+		}
 		.brand_right{
-			width:280px; height: 540px; position: absolute;right: 0;top: 20px; background: white;
-			img{
-				width:280px; height: 228px; position: absolute;left: 0 ;top:0;
+			width:280px; height: 540px; position: absolute;right: 0;top: 20px; background: white;	
+			
+			.brand_lunbo .bd{
+			width: 280px; height: 228px;position: relative; overflow: hidden;
+			.cirr{
+				width: 20px; height: 20px; margin-left: 10px; background: white; border-radius: 50%;float: left;
 			}
-		.brand_lunbo{
-			width: 280px; height: 228px;
+			.curr{
+				background: black;
+			}
+			.circles2{
+				position: absolute; left: 0 ;bottom: 10px; width: 100%;height: 30px;
+			}
+			div{
+				width: 280px; height: 228px;
+			}
+			ul{
+				position: absolute;height: 228px;
+				li{
+					height: 228px;float: left;
+					a{
+						img{
+							width:280px; height: 228px;
+						}
+					}
+					
+				}
+			}
 		}
 		.brand_word{
-			width: 235px;height: 282px; overflow: hidden; margin: 0 auto;
+			width: 235px;height: 282px; overflow: hidden; padding-left: 15px; 
+			.tempWrap{
+				position: relative;width:235px; height: 168px;overflow: hidden;
+			}
+			ul{
+				position: absolute; left: 0; top: 0; 
+			}
+			li{
+				height: 41px; padding-bottom: 15px;
+			}
 			h1{
 				font-size: 16px;
 			    color: #333;
@@ -459,19 +519,19 @@ img{
 			    display: inline-block;
 
 			}
-	.brand_a2{
-		width: 109px;
-	    text-align: center;
-	    height: 40px;
-	    line-height: 40px;
-	    color: #fff;
-	    font-size: 16px;
-	    font-weight: bold;
-	    margin-top: 20px;
-	    display: inline-block;
-	    background: #FF9900;
-    	margin-left: 10px;
-	}
+		.brand_a2{
+			width: 109px;
+		    text-align: center;
+		    height: 40px;
+		    line-height: 40px;
+		    color: #fff;
+		    font-size: 16px;
+		    font-weight: bold;
+		    margin-top: 20px;
+		    display: inline-block;
+		    background: #FF9900;
+	    	margin-left: 10px;
+		}
 	}
 }
 .brand_bottom .brand_left li{
@@ -556,16 +616,16 @@ img{
 				}
 		 margin-bottom: 40px;
 		}
-		.brand_con {
-				height: 734px; width:1200px; overflow: hidden; margin: 0 auto;
+		.product_con {
+				height: 734px; width:1200px; overflow: hidden; margin: 0 auto; 
 			}
-			.brand_con .brand_nav li{
+			.product_con .product_nav li{
 				    float: left;
 				    position: relative;
 				    height: 49px;
 				    margin-right: 15.2px;
 			}
-			.brand_con .brand_nav li a{
+			.product_con .product_nav li a{
 				width: 84px;
 			    height: 38px;
 			    border: 1px solid #d7d7d7;
@@ -583,10 +643,10 @@ img{
 			    background: #fff;
 			    display: inline-block;
 			}
-			.current a{
-				border: 1px solid #41CCB4;
+			.currenta{
+				border: 1px solid #41CCB4!important;
 			}
-			.current img{
+			.product_con .product_nav li img{
 				width: 20px;
 			    height: 9px;
 			    position: absolute;
@@ -594,10 +654,30 @@ img{
 			    left: 50%;
 			    margin-left: -10px;
 			    bottom: 1.5px;
+			    display: none;
+			}
+			.product_con .product_nav li{
+					.currentimg{
+					display: block!important;
+					width: 20px;
+				    height: 9px;
+				    position: absolute;
+				    bottom: 1px;
+				    left: 50%;
+				    margin-left: -10px;
+				    bottom: 1.5px;
+				}
 			}
 			.product_bottom{
 				width: 1200px; height: 665px; position: relative;
 				margin-top: 10px;
+
+				.products-box{
+					display: none;
+				}
+				div:first-child{
+					display: block;
+				}
 				.products{
 					width: 912px; height: 665px; position: absolute;left: 0;top: 0;
 					li{
@@ -798,9 +878,9 @@ img{
 		
 	}
 .laba{
-					position: absolute;top: 0;right: 100px;
+					position: absolute;top: 0;right: 100px; color: #666; 
 	.laba_text{
-		float: right;
+		float: right;padding-left: 15px;
 	}
 	img{
 		float: left;display: inline-block;
@@ -1026,7 +1106,7 @@ img{
 		    font-size: 14px;
 		    font-weight: normal;
 		    display: block;
-		    width: 278px; height: 19px; clear: both;
+		    width: 278px;clear: both; height: 40px; line-height: 40px;
 		}
 		.market-left{
 			float: left;
@@ -1034,6 +1114,12 @@ img{
 		a img{
 			width: 64px;
    			 height: 64px; border: 1px solid #ccc; float: left;
+		}
+		.boxs{
+			display: none;
+		}
+		.market-box:first-child>p+div{
+			display: block;
 		}
 		.market-right{
 			float: left;width: 175px;margin-left: 10px;
@@ -1071,7 +1157,7 @@ img{
 }
 
 .show{
-	width: 1200px; height: 321px; margin: 0 auto; position: relative;overflow: hidden;
+	width: 1200px; height: 321px; margin: 0 auto; position: relative;overflow: hidden; margin-bottom: 30px;
 	h1{
 		
 	    font-size: 18px;
@@ -1097,22 +1183,29 @@ img{
 	}
 	.shows{
 		height: 280px;width: 2400px;position: relative; 
-		.next,.pre{
-		position: absolute;     
-		width: 40px;
-	    height: 60px;
-	    top: 80px;
-	    z-index: 1;
-	    cursor: pointer;
+		.hd{
+			height: 280px; width: 1200px;position: relative;
+		}
+		.next,.prev{
+			position: absolute;     
+			width: 40px;
+		    height: 60px;
+		    top: 60px;
+		    z-index: 10000;
+		    cursor: pointer;
+		    background: rgba(0,0,0,0.2);line-height: 60px; text-align: center; font-size: 30px
 		}
 		.next{
-			left: 0;background: url(../images/zuojt.png) no-repeat center;
+			left: 0; 
 		}
-		.right{
-			right: 0;background: url(../images/youjt.png) no-repeat center;
+		.prev{
+			right: 0;
 		}
 		ul li{
 			float: left;margin-right: 25px;
+		}
+		ul{
+			position: absolute; left: 0 ;top: 0;
 		}
 	}
 	
