@@ -25,7 +25,7 @@
                        <div id="box" >
                        </div>
                    </div>
-                    <div id="big" style="">
+                    <div id="big" style="display: none" >
                         <img src = "images/detail/ccd79374-a2eb-441c-b978-8c06fb269781.jpg" id="bpic">
                     </div>
                 </div>
@@ -227,38 +227,29 @@
                                             <ul>
                                                 <li>
                                                     <!--图片预览-->
-                                                    <div index="0"></div>
-                                                    <p index="0" style="cursor: pointer;">+请添加图片</p>
-                                                    <input type="hidden" index="0" id="ImageDataObjectList[0].Path" name="ImageDataObjectList[0].Path" value="empty">
-                                                    <input type="hidden" id="ImageDataObjectList[0].Name" name="ImageDataObjectList[0].Name" value="GO佳居奥莱馆">
+                                                    <div class="p0" ></div>
+                                                     <input type="file" id="files" class="sflie" accept="image/jpeg,image/gif,image/png" onchange="uploadfile.change(this.files, this)" ><label for="files" style="cursor: pointer;">+请添加图片</label>
+                                                    
                                                 </li>
                                                 <li>
                                                     <!--图片预览-->
-                                                    <div index="1"></div>
-                                                    <p index="1" style="cursor: pointer;">+请添加图片</p>
-                                                    <input type="hidden" index="1" id="ImageDataObjectList[1].Path" name="ImageDataObjectList[1].Path" value="empty">
-                                                    <input type="hidden" id="ImageDataObjectList[1].Name" name="ImageDataObjectList[1].Name" value="GO佳居奥莱馆">
+                                                    <div class="p5"></div>
+                                                   <input type="file" id="files1" class="sflie" accept="image/jpeg,image/gif,image/png"  onchange="uploadfile.change(this.files, this)"><label for="files1" style="cursor: pointer;">+请添加图片</label>
                                                 </li>
                                                 <li>
                                                     <!--图片预览-->
-                                                    <div index="2"></div>
-                                                    <p index="2" style="cursor: pointer;">+请添加图片</p>
-                                                    <input type="hidden" index="2" id="ImageDataObjectList[2].Path" name="ImageDataObjectList[2].Path" value="empty">
-                                                    <input type="hidden" id="ImageDataObjectList[2].Name" name="ImageDataObjectList[2].Name" value="GO佳居奥莱馆">
+                                                    <div class="p2"></div>
+                                                    <input type="file" id="files2" class="sflie" accept="image/jpeg,image/gif,image/png" onchange="uploadfile.change(this.files, this)" ><label for="files2" style="cursor: pointer;">+请添加图片</label>
                                                 </li>
                                                 <li>
                                                     <!--图片预览-->
-                                                    <div index="3"></div>
-                                                    <p index="3" style="cursor: pointer;">+请添加图片</p>
-                                                    <input type="hidden" index="3" id="ImageDataObjectList[3].Path" name="ImageDataObjectList[3].Path" value="empty">
-                                                    <input type="hidden" id="ImageDataObjectList[3].Name" name="ImageDataObjectList[3].Name" value="GO佳居奥莱馆">
+                                                    <div class="p3"></div>
+                                                    <input type="file" id="files3" class="sflie" accept="image/jpeg,image/gif,image/png" onchange="uploadfile.change(this.files, this)" ><label for="files3" style="cursor: pointer;">+请添加图片</label>
                                                 </li>
                                                 <li>
                                                     <!--图片预览-->
-                                                    <div index="4"></div>
-                                                    <p index="4" style="cursor: pointer;">+请添加图片</p>
-                                                    <input type="hidden" index="4" id="ImageDataObjectList[4].Path" name="ImageDataObjectList[4].Path" value="empty">
-                                                    <input type="hidden" id="ImageDataObjectList[4].Name" name="ImageDataObjectList[4].Name" value="GO佳居奥莱馆">
+                                                    <div class="p4"></div>
+                                                    <input type="file" id="files4" class="sflie" accept="image/jpeg,image/gif,image/png" onchange="uploadfile.change(this.files, this)" ><label for="files4" style="cursor: pointer;">+请添加图片</label>
                                                 </li>
                                             </ul>
                                             <input type="hidden" name="BrandId" id="BrandId" value="9ef9a5c8-1bc7-e611-9995-f4ce46b62b5b">

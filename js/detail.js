@@ -200,3 +200,43 @@ $("#ulScores li").click(function(){
 		$(".comment li").hide();
 	}
 })
+
+/*$(".imgUpload li input").change(function(){
+	var imgs = $(this).val();
+	var srcimg = "../images/"+farr(imgs)
+	console.log(srcimg);
+	$(this).prev("div").css({
+		backgroundImage:"url("+srcimg+")",
+		backgroundSize:"contain",
+		backgroundRepeat:"no-repeat"
+	})
+})
+function farr(element){
+	console.log(element)
+	var arr = element.split("\\");
+	console.log(arr)
+	for (var i = 0; i < arr.length; i++) {
+		var gflie = arr[arr.length-1];
+	}
+	return gflie
+}*/
+var uploadfile={
+    change:function(f, element){
+    	// var that = this;
+    	// console.log(111)
+    	// console.log(that)
+        for(var i=0;i< f.length;i++){
+            var reader=new FileReader();
+            reader.readAsDataURL(f[i]);
+            reader.onload=function(e){
+              $(element).prev("div").css({
+					backgroundImage:"url("+e.target.result+")",
+					backgroundSize:"contain",
+					backgroundRepeat:"no-repeat"
+				})
+
+            }
+        }
+
+    }
+}

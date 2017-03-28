@@ -27,7 +27,32 @@ body{
 
 
 .loginP{
-	width: 360px;height: 44px; border: 1px solid #E8E8E8; margin-top: 20px;
+	width: 360px;height: 44px; border: 1px solid #E8E8E8; margin-top: 20px;position: relative;
+    i{
+        display: none;
+        width: 300px; height: 37px; position: absolute; left: 400px; top: 0;font-style: normal;line-height: 37px; font-size: 16px;
+        img{vertical-align: middle;}
+        .img2{
+            margin-top: 10px;font-size: 18px;
+        }
+
+    }
+    
+}
+.userinfo5{
+    em{
+            display: inline-block; background: rgb(255, 51, 0);
+            float: right;
+            width: 49px;
+            height: 14px;
+            font-size: 10px;
+            line-height: 14px;
+            text-align: center;
+            color: #fff;
+            font-style: normal;
+            margin-top: 15px;
+            margin-right: 2px;
+    }
 }
 .loginP img{
 	 margin-left: 15px;

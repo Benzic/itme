@@ -85,7 +85,7 @@ $("#head").on("mouseleave",".pullDownList li",function(){
 		$(".pudownList1").hide();
 		$(".pudownList").hide();
 	
-	$("#head").on("mouseleave",".pudownList .pudownList1",function(){
+$("#head").on("mouseleave",".pudownList .pudownList1",function(){
 		$("#pullDown").css({
 				background:"rgb(255, 255, 255)"
 		})
@@ -96,11 +96,4 @@ $("#head").on("mouseleave",".pullDownList li",function(){
 		})
 
 	})
-})
-$(".select a span").click(function(){
-	$(this).addClass("sel");
-})
-$(".sortType a span").click(function(){
-	$(".sortType a span").removeClass("sel")
-	$(this).addClass("sel");
 })

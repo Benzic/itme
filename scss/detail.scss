@@ -402,8 +402,11 @@
                     .imgUpload{
                         width: 750px; height: 147px; margin-left: 70px;clear: both;
                         li{
-                            float: left; margin-left: 15px;
-                            p{
+                            float: left; margin-left: 15px;width: 134px; height: 160px; margin-left: 15px;
+                           .sflie{
+                                visibility: hidden;
+                            }
+                            label{
                                 width: 132px;
                                 height: 28px;
                                 border: 1px solid #E8E8E8;
@@ -414,9 +417,12 @@
                                 color: #666;
                                 margin-top: 10px;
                                 clear: both;
+                                display: inline-block;
+                                margin-top: -50px;
                             }
                         }
                         div{
+                            clear: both;
                             width: 132px;
                             height: 105px;
                             border: 1px solid #E8E8E8;
