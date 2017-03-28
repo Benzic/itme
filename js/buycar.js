@@ -16,6 +16,9 @@ $("#head").on("click","#checkCity",function(){
 			})
 	})
 })
+$("#head").on("mouseleave",".cityList",function(){
+	$(".cityList").hide(0);
+})
 $("#head").on("click",".more",function(){
 	
 	$("#pullDown").slideDown(500);
@@ -94,10 +97,11 @@ $("#head").on("mouseleave",".pullDownList li",function(){
 
 	})
 })
-$(".select a span").click(function(){
-	$(this).addClass("sel");
-})
-$(".sortType a span").click(function(){
-	$(".sortType a span").removeClass("sel")
-	$(this).addClass("sel");
-})
+
+
+$(".check_all").click(function(){
+			var state = $(this).prop("checked");
+			 $(".ck_product").prop("checked", state); 
+			 calcation();
+
+});

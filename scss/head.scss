@@ -54,7 +54,7 @@
 #operat{
     width: 1200px; height: 100%; margin:12px auto;position: relative;
 }
-#operat .logo{
+#operat #logo{
     display: inline-block; float: left;width: 142px; height: 70px;position: absolute;
     bottom: 0;
 }
@@ -80,6 +80,11 @@
     margin: 19px auto 19px 224px;
     float: left;
     position: relative;
+}
+#operat .city+div+a img{
+    position: absolute;
+    bottom: -25px;
+    right: 0; 
 }
 #operat .city+div  p span{
     margin-right: 10px;
@@ -200,7 +205,14 @@
     h3 a:hover{
         color: #41CCB4; 
     }
-    
+    #puh3{
+        a{
+            display: block;width: 100%; height: 40px;clear: both; margin-top: 180px;
+        }
+        
+    }
+    .first-part{
+    }
     .first-part li {
         width: 120px;
         line-height: 30px;
