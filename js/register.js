@@ -1,7 +1,7 @@
 $(function(){
-	$("#UserName").blur(function(){
+	$("#userName").blur(function(){
 
-		var username = $("#UserName").val();
+		var username = $("#userName").val();
 		var str = /^[\u4E00-\u9FA5A-Za-z][\u4E00-\u9FA5A-Za-z0-9]+$/;
 		if (username=="") {
 			$(".userinfo2").show();
@@ -32,17 +32,18 @@ $(function(){
 		}
 	    
 	})
-	$(".password1").blur(function(){
+	$("#password1").blur(function(){
+
 		var L_color="rgb(255, 51, 0)",      //低强度的颜色，且只显示在最左边的单元格中  
         M_color="rgb(46, 190, 244)",    //中等强度的颜色，且只显示在左边两个单元格中  
         H_color="rgb(40, 209, 58)";      //高强度的颜色，三个单元格都显示  
-        if ($(".password1").val()==null||$(".password1").val()==''){    
+        if ($("#password1").val()==null||$("#password1").val()==""){    
            $(".userinfo6").show();
            $(".userinfo5").hide();
            $(".userinfo9").hide();
         }    
         else{    
-            var S_level=checkStrong($(".password1").val()); 
+            var S_level=checkStrong($("#password1").val()); 
             console.log(S_level)   
             switch(S_level) {    
             case 0:    
@@ -116,9 +117,9 @@ $(function(){
         }  
         return bitTotal(Modes);    
     } 
-    $(".password2").blur(function(){
-    	var ps1 =  $(".password1").val();
-    	var ps2 =  $(".password2").val();
+    $("#password2").blur(function(){
+    	var ps1 =  $("#password1").val();
+    	var ps2 =  $("#password2").val();
     	if (ps1!=ps2) {
     		$(".userinfo8").show();
 			$(".userinfo7").hide()
@@ -127,5 +128,31 @@ $(function(){
 			$(".userinfo7").show()
     	}
     })
-	
+
+    $("#btn").click(function(){
+        console.log(2)
+        if ($("#password1").val()==$("#password2").val()) {
+                console.log(123456)
+                $.post("../php/register.php",{userName:$("#userName").val(),password1:$("#password1").val(),phone:$("#phone").val()},function(data){
+                console.log(data);
+                if (data.status===1) {
+                    console.log(1)
+                    $("#userName").val("123456");
+                }else{
+                    $("#userName").val("");
+                    $("#password1").val("");
+                    $("#password2").val("");
+                    $("#phone").val("");
+                     console.log(2)
+                }
+            },"json");
+            isExist = true;
+        }else{
+                    $("#userName").val("");
+                    $("#password1").val("");
+                    $("#password2").val("");
+                    $("#phone").val("");
+        }
+
+	})
 })
