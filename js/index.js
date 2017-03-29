@@ -1,4 +1,15 @@
 $(function(){
+	$.cookie.json = true;
+    _passager = $.cookie("passager") || [];
+    var lenw = _passager.length;
+    var htmlm=""
+    if (_passager!=[]) {
+    	htmlm="<a href='#'>"+_passager[lenw-1].name+"</a>";
+    	$("#loginw").html("")
+    	$("#loginw").append(htmlm)
+    	htmlm=""
+    }
+
 	$("#checkCity").click(function(){
 		$(".cityList").show();
 		$(".sel").css({
@@ -386,4 +397,7 @@ $(function(){
 				})
 		})
 	}
+
+	
+	
 })

@@ -1,5 +1,66 @@
 $("#head").load("head.html");
 $("#bottom").load("footer.html");
+$(function(){
+	$.cookie.json = true;
+    _passager = $.cookie("passager") || [];
+    var lenw = _passager.length;
+    var htmlm=""
+    console.log(_passager)
+    if (_passager!=[]) {
+    	htmlm="<a href='#'>"+_passager[lenw-1].name+"</a>";
+    	$("#loginw").html("")
+    	$("#loginw").append(htmlm)
+    	htmlm=""
+	}
+	 $.ajax({
+                    url:"http://www.bianxia.top/demo/selectmusic/product.php",
+                    data:{action:"read"},
+                    success:function(data){
+                    	console.log(data.lastIndexOf("]"))
+                        var nn = data.substring(213,1512);
+                        var inx = nn.indexOf("null");
+                        var nar = nn.replace(/,null/gi, "")
+                        var array = JSON.parse(nar);
+                        var html = "";
+                       
+                        console.log(array)
+                        $.each(array,function(index){
+                           	html+="<li><a href='productdetail.html' class='sp'  value="+array[index].id+"><img src="+array[index].src_pic+"></a><h2>"+array[index].name+"</h2><p>¥"+array[index].price+"<span>浏览(70 次)</span></p><a href='#'>"+array[index].shangjia+"</a></li>"
+                           	console.log(array[index].id)
+                        })
+                        $(".list").append(html);
+                        $(".list .sp").click(function(){
+                            var  _id = $(this).attr("value");
+                            console.log(_id)
+                            $.cookie.json = true;
+                            var _products = $.cookie("products") || [];
+                            var index = exists(_id,_products)
+                            if (index===-1) {
+                            _products.push({
+                                id:_id
+                            });
+                            if (_products.length>=2) {
+                                 _products.shift();
+                             }
+                            }
+                            console.log(_products);
+                                $.cookie("products",_products,{
+                                    expires:7,path:"/"
+                            });
+                            function exists(_id,array){
+                                for (var i = 0; i < array.length; i++) {
+                                    if (array[i].id===_id) {
+                                        return i;
+                                    }
+                                }
+                                return -1;
+                            }
+                            console.log(1111111111);
+                        });
+                    }
+      });
+
+})
 
 $("#head").on("click","#checkCity",function(){
 	console.log(1)

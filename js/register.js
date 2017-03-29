@@ -5,33 +5,57 @@ $(function(){
 		var str = /^[\u4E00-\u9FA5A-Za-z][\u4E00-\u9FA5A-Za-z0-9]+$/;
 		if (username=="") {
 			$(".userinfo2").show();
-			$(".userinfo").hide()
+			$(".userinfo").hide();
+            $(".userinfo1").hide();
 		}else{
-			if (str.test(username)) {
-				$(".userinfo").show()
-				$(".userinfo2").hide();
-			} else{
-				
-			}
+			 checkName(username);
 		}
-		
 	})
+    function checkName(name){
+        $.post("http://localhost/wamp/www/project/php/users.php",{userName:$("#userName").val()},
+            function(data){
+                if (data.status===1) {
+                    $(".userinfo1").show();
+                    $(".userinfo2").hide(); 
+                    $(".userinfo").hide();
+                }else if(data.status===0){
+                    $(".userinfo").show();
+                    $(".userinfo2").hide();
+                    $(".userinfo1").hide();
+                }
+         },"json");
+        
+    }
+
 	$("#phone").blur(function(){
 		var phone = $("#phone").val();
 		var str = /^1[34578]\d{9}$/;
 		if(phone==""){
 			$(".userinfo4").show();
 			$(".userinfo3").hide()
+            $(".userinfo10").hide()
 		}else{
-			if(str.test(phone)){ 
-   				$(".userinfo3").show();
-				$(".userinfo4").hide()
-		    } else{
-		    	
-		    }
+			checkPhone(phone);
 		}
 	    
 	})
+    function checkPhone(phone){
+        $.post("http://localhost/wamp/www/project/php/phone.php",{phone:$("#phone").val()},
+            function(data){
+                if (data.status===1) {
+                    $(".userinfo10").show()
+                    $(".userinfo4").hide(); 
+                    $(".userinfo3").hide();
+                    console.log(phone+"chenggong")
+
+                }else if(data.status===0){
+                    console.log(phone+"shibai")
+                    $(".userinfo10").hide()
+                    $(".userinfo4").hide();
+                    $(".userinfo3").show();
+                }
+         },"json");
+    }
 	$("#password1").blur(function(){
 
 		var L_color="rgb(255, 51, 0)",      //低强度的颜色，且只显示在最左边的单元格中  
@@ -130,29 +154,45 @@ $(function(){
     })
 
     $("#btn").click(function(){
-        console.log(2)
-        if ($("#password1").val()==$("#password2").val()) {
+        if ($("#password1").val()==$("#password2").val()&&$('#rember').is(':checked')&&$("#password1").val()!=""&&$("#password2").val()!=""&&$("#userName").val()!=""&&$("#phone").val()!="") {
                 console.log(123456)
-                $.post("../php/register.php",{userName:$("#userName").val(),password1:$("#password1").val(),phone:$("#phone").val()},function(data){
+                $.post("http://localhost/wamp/www/project/php/register.php",{userName:$("#userName").val(),password1:$("#password1").val(),phone:$("#phone").val()},function(data){
                 console.log(data);
                 if (data.status===1) {
-                    console.log(1)
-                    $("#userName").val("123456");
-                }else{
+                    console.log("成功")
+                    window.location = "login.html"
                     $("#userName").val("");
                     $("#password1").val("");
                     $("#password2").val("");
                     $("#phone").val("");
-                     console.log(2)
+                    alert("注册成功")
+                }else if(data.status===0){
+                    alert("注册失败")
+                    $("#userName").val("");
+                    $("#password1").val("");
+                    $("#password2").val("");
+                    $("#phone").val("");
                 }
             },"json");
-            isExist = true;
         }else{
-                    $("#userName").val("");
-                    $("#password1").val("");
-                    $("#password2").val("");
-                    $("#phone").val("");
+            alert("注册失败")
+            return false
         }
-
 	})
+    $("#rember").click(function(){
+         if ($("#rember").is(':checked')) {
+            $("#btn").prop("disabled",false)
+            $("#btn").css({
+                backgroundColor:"#41CCB4",
+                cursor:"pointer"
+            })
+        }else{
+            $("#btn").prop("disabled",true);
+            $("#btn").css({
+                backgroundColor:"rgb(153, 153, 153)",
+                cursor:"default"
+            })
+        }
+    })
+   
 })

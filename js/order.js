@@ -1,5 +1,130 @@
 $("#head").load("head.html");
 $("#bottom").load("footer.html");
+$(function(){
+
+	$.cookie.json = true;
+    _passager = $.cookie("passager") || [];
+    var lenw = _passager.length;
+    var htmlm=""
+    console.log(_passager)
+    if (_passager!=[]) {
+    	htmlm="<a href='#'>"+_passager[lenw-1].name+"</a>";
+    	$("#loginw").html("")
+    	$("#loginw").append(htmlm)
+    	htmlm=""
+	}
+	var array = $.cookie("buycar") || [];
+
+	console.log(array)
+	$.each(array,function(index,element){
+		$(".name").text(array[index].name);
+		$(".dianjia").text(array[index].dianjia);
+		$(".pic").text(array[index].pic);
+		$(".amount").text(array[index].amount);
+		$(".class").text(array[index].class)
+		$(".phone").text("电话："+array[index].phone)
+		$(".zong").text("￥"+array[index].amount*array[index].price)
+	})
+	var isOK = true;
+	$(".addresses").click(function(){
+		if (isOK==true) {
+		isOK = false
+		$("#dizhi").slideDown(500);
+		// 保存所有地址的对象
+			var addresses = {};
+
+			/* 读取 address.json 中的所有省市区信息 */
+			$.ajax("http://localhost/wamp/www/project/php/addresses.json").done(function(data){
+				var provinces = data.regions;
+				provinces.forEach(function(province){
+					addresses[province.name] = {}; // 保存省份下城市的对象
+					var cities = province.regions || [];
+					cities.forEach(function(city){
+						addresses[province.name][city.name] = city.regions;
+					});
+				});
+
+				initProvince();
+			});
+
+			// 当省份选择改变时：
+			$("#province").change(initCity);
+			// 当城市选择改变时：
+			$("#city").change(initDistrict);
+
+			// 设置省份的显示信息
+			function initProvince() {
+				var html = "";
+				for (var attr in addresses) {
+					html += "<option value='"+attr+"'>"+attr+"</option>";
+				}
+				$("#province").append(html);
+
+				initCity();
+
+			}
+
+			// 设置选中省份下的城市显示信息
+			function initCity() {
+				// 当前选中的省份
+				var currProvince = $("#province").val();
+				// 获取该省份的城市信息，并显示
+				var cities = addresses[currProvince],
+					html = "";
+				for (var attr in cities) {
+					html += "<option value='"+ attr +"'>"+ attr +"</option>";
+				}
+				$("#city").empty().append(html);
+				initDistrict();
+			}
+
+			// 设置选中省份与城市下的区县信息
+			function initDistrict() {
+				// 当前选中的省份与城市
+				var currProvince = $("#province").val(),
+					currCity = $("#city").val(),
+					html = "";
+
+				// 显示该选中城市下的区县
+				var districts = addresses[currProvince][currCity] || [];
+				districts.forEach(function(district){
+					html += "<option value='"+ district.name +"'>"+ district.name +"</option>";
+				});
+
+				$("#district").empty().append(html);
+			}
+			$("#Address").val($("#province").val());
+			var htmldress = ""
+			var isClick = true
+			$(".add").click(function(){
+				if (isClick==true) {
+					$(".box").slideDown(500);
+					isClick =false
+				}else if (isClick ==false) {
+					$(".box").slideUp(500);
+					isClick =true
+				}
+				
+			})
+			$(".dree").click(function(){
+				if ($("#name").val()!=""&&$("#Mobile").val()!=""&&$("#Address").val()!="") {
+					htmldress=" <span>"+$("#name").val()+"</span><span class='nress'>"+$("#province").val()+$("#city").val()+$("#district").val()+$("#Address").val()+"</span><span>"+$("#Mobile").val()+"</span><span></span><span><a href='#' class='choose'>选择</a></span>"
+					$(".addressUl").append(htmldress)
+					$(".choose").click(function(){
+
+						$(".realaddress").text($("#name").val()+"   "+$("#province").val()+$("#city").val()+$("#district").val()+$("#Address").val()+"   "+$("#Mobile").val())
+						$("#dizhi").slideUp(500);
+						isOK = true;
+					})
+				}else{
+					alert("信息或地址有误请重新填写")
+				}
+			})
+			
+		}
+	})
+	
+})
 
 $("#head").on("click","#checkCity",function(){
 	console.log(1)
@@ -97,3 +222,4 @@ $("#head").on("mouseleave",".pudownList .pudownList1",function(){
 
 	})
 })
+

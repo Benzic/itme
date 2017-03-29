@@ -6,16 +6,17 @@
 	<link rel="stylesheet" type="text/css" href="dist/css/index.css">
 	<link rel="stylesheet" type="text/css" href="dist/css/base.css">
     <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
 </head>
 <body>
 	<div id="header-w">
 		<div id="header">
-				<div class="header-login">欢迎来到GO佳居！<span><a href="login.html">登录</a>|<a href="register.html">免费注册</a></span></div>
+				<div class="header-login">欢迎来到GO佳居！<span id="loginw"><a href="login.html">登录</a>|<a href="register.html">免费注册</a></span></div>
 				<div class="header-menu">
 					<ul>	
 						<li><a href="index.html">网站首页</a></li>
 						<li><a href="#">个人中心</a></li>
-						<li><a href="#"><img src="images/icon/gwc.jpg" style="display:inline-block">购物车(<span>0</span>)</a></li>
+						<li><a href="buycar.html"><img src="images/icon/gwc.jpg" style="display:inline-block">购物车(<span>0</span>)</a></li>
 						<li><a href="#">客户服务</a></li>
 						<li><a href="#">微信</a></li>
 						<li><a href="#">微博</a></li>
@@ -73,7 +74,7 @@
 		<div id="menu-Nav">
 			<ul class="menul">
 	            <li style="width:150px; text-align:center; background:#41CCB4">全部产品分类</li>
-	            <li><a href="#" class="sel">首页</a></li>
+	            <li><a href="index.html" class="sel">首页</a></li>
 	            <li><a href="#" class="">活动</a></li>
 	            <li><a href="#" class="">优惠券</a></li>
 	            <li><a href="#" class="">资讯</a></li>
@@ -88,15 +89,15 @@
 		        <ul class="pullDownList" style="background-color: rgb(255, 255, 255);">
 		            <li class="" name="0">
 		            	<img src="images/icon/tb1.gif">
-		                <a href="#">卧室家具</a>
+		                <a href="list.html">卧室家具</a>
 		            </li>
 		            <li class="" name="1">
 		            	<img src="images/icon/tb2.gif">
-		                <a href="#">客厅家具</a>
+		                <a href="list.html">客厅家具</a>
 		            </li>
 		            <li class="" name="2">
 		            	<img src="images/icon/tb3.gif">
-		                <a href="#">餐厅家具</a>
+		                <a href="list.html">餐厅家具</a>
 		            </li>
 		            <li class="" name="3">
 		            	<img src="images/icon/tb4.gif">
@@ -104,44 +105,44 @@
 		            </li>
 		            <li class="" name="4">
 		            	<img src="images/icon/tb5.gif">
-		                <a href="#">门厅家具</a>
+		                <a href="list.html">门厅家具</a>
 		            </li>
 		            <li class="" name="5">
 		            	<img src="images/icon/tb6.gif">
-		                <a href="#">儿童家具</a>
+		                <a href="list.html">儿童家具</a>
 		            </li>
 		            <li class="" name="6">
 		            	<img src="images/icon/tb7.gif">
-		                <a href="#">休闲家具</a>
+		                <a href="list.html">休闲家具</a>
 		            </li>
 
 		            <li class="" name="7">
 		            	<img src="images/icon/tb8.gif">
-		                <a href="#">户外家具</a>
+		                <a href="list.html">户外家具</a>
 		            </li>
 		            <li class="" name="8">
 		            	<img src="images/icon/tb9.gif">                                                                 
-		                <a href="#">酒店家具</a>
+		                <a href="list.html">酒店家具</a>
 		            </li>
 		            <li class="" name="9">
 		            	<img src="images/icon/tb10.gif">
-		                <a href="#">工程家具</a>
+		                <a href="list.html">工程家具</a>
 		            </li>
 		            <li class="" name="10">
 		            	<img src="images/icon/tb11.gif">
-		                <a href="#">红木家具</a>
+		                <a href="list.html">红木家具</a>
 		            </li>
 		            <li class="" name="11">
 		            	<img src="images/icon/tb12.gif">
-		                <a href="#">办公家具</a>
+		                <a href="list.html">办公家具</a>
 		            </li>
 		            <li class="" name="12">
 		            	<img src="images/icon/tb13.gif">
-		                <a href="#">定制家具</a>
+		                <a href="list.html">定制家具</a>
 		            </li>
 				    <li class="" name="13">
 				    	<img src="images/icon/tb14.gif">
-				        <a href="#">学校用具</a>
+				        <a href="list.html">学校用具</a>
 					</li>
 		        </ul>
 			</div>
@@ -3849,7 +3850,29 @@
         	</div>
         </div>
     </div> 
-   
+   <!--悬浮框-->
+    <div class="fixed_index" style="height: 918px;">
+            <div>
+                <a href="#"  class="my">
+                    <img src="images/icon/my.png" alt="个人中心">
+                    我的
+                </a>
+                <a href="#" >
+                    <img src="images/icon/yhqx.png" alt="优惠券">
+                    券
+                </a>
+                <a href="#" class="gwc">
+                    <img src="images/icon/gwc.png" alt="购物车">
+                    购物车
+                    <p>0</p>
+                    <div id="end"></div>
+                </a>
+                <a class="backTop" href="#header-w">
+                    <img src="images/icon/hj.png" alt="TOP">
+                    TOP
+                </a>
+            </div>
+        </div>
 <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>

@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="dist/css/order.css">
 	<link rel="stylesheet" type="text/css" href="dist/css/base.css">
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+     <script type="text/javascript" src="js/jquery.cookie.js"></script>
 </head>
 <body>
 	<div id="head">
@@ -24,15 +25,15 @@
             </div>
     		<div class="second_part">
     			<h2>
-    				收货地址：  <a href="#">更改</a>
+    				收货地址： <em class="realaddress"> </em><a href="#" class="addresses">更改</a>
     			</h2>
-    			<span>订单一：<a href="#">GO佳居奥莱馆</a></span>
+    			<span>订单一：<a href="#" class="dianjia">GO佳居奥莱馆</a></span>
     			<div>
-    				<img src="images/list/cd6c5034-06af-45d1-b2e1-5db56cbc8383_400_300.jpg">
-    				<p>自由格调皮质床</p>
-    				<span>6</span>
-    				<em>床</em>
-    				<b>￥3580.00</b>
+    				<img src="images/list/cd6c5034-06af-45d1-b2e1-5db56cbc8383_400_300.jpg" class="pic">
+    				<p class="name">自由格调皮质床</p>
+    				<span class="amount">6</span>
+    				<em class="class">床</em>
+    				<b class="zong">￥3580.00</b>
     			</div>
     			<div></div>
     			<span>
@@ -43,7 +44,7 @@
     					你好，我在GO佳居网上看到GO佳居奥莱馆的产品，非常喜欢，如果购买的话能否有优惠，期待能给我报个底价,谢谢！
     				</div>
     			</div>
-    			<div>商品数量总计：6件
+    			<div>商品数量总计：<i class="amount">6</i>件
     				<a href="#">批量咨询商家</a>
     			</div>
     		</div>
@@ -86,7 +87,38 @@
             </div>
     	</div>
 	</div>
-
+    <div id="dizhi">
+         <div class="rightDiv menuRs address information">
+                <p class="menuName"><i></i><b>地址管理</b></p>
+                <div>
+                <ul class="addressUl">
+                    <li>
+                        <span>收货人</span>
+                        <span class="nress">详细地址</span>
+                        <span>手机号</span>
+                        <span></span>
+                        <span>操作</span>
+                    </li>
+                </ul>
+                        <p class="add"><strong>+添加新地址</strong></p> 
+                        <div class="box">              
+                            <p><span>收货人:</span><input class="text-box single-line" value="" id="name"></p>
+                            <p>
+                                <span>所在地区:</span>
+                                <select  id="province" name="ContactDataObject.Province" style="margin-left: 26px;"></select>
+                                <select  id="city" name="ContactDataObject.City" style="margin-left: 26px;"></select>
+                                <select  id="district" name="ContactDataObject.County" style="margin-left: 26px;"></select>
+                            </p>
+                             <p><span>街道地址:</span><input class="text-box "  id="Address" name="ContactDataObject.Address" type="text" value=""></p>
+                            <p><span>联系电话:</span><input class="text-box "  id="Mobile" name="ContactDataObject.Mobile" type="text" value=""></p>
+                           
+                            <hr>
+                            <p><span></span><input type="submit" value="保存新地址" class="dree"></p> 
+                        </div>          
+            </div>
+        </div>
+    </div>
+    </div>
 
 
 	<div id="bottom">

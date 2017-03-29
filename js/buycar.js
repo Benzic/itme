@@ -1,5 +1,61 @@
 $("#head").load("head.html");
 $("#bottom").load("footer.html");
+$(function(){
+	$.cookie.json = true;
+    var _passager = $.cookie("passager") || [];
+    var lenw = _passager.length;
+    var htmlm=""
+    console.log(_passager)
+    if (_passager!=[]) {
+    	htmlm="<a href='#'>"+_passager[lenw-1].name+"</a>";
+    	$("#loginw").html("")
+    	$("#loginw").append(htmlm)
+    	htmlm=""
+	}
+	$(".check_all").click(function(){
+				var state = $(this).prop("checked");
+				 $(".ck_product").prop("checked", state); 
+				 calcation();
+
+	});
+	var array = $.cookie("buycar") || [];
+
+	console.log(array)
+   	var nhtml ="";
+	$.each(array,function(index,element){
+		nhtml = "<input type='checkbox' class='ck_product'><dl><dt><img src='"+array[index].pic+"' alt='"+array[index].name+"'></dt><dd><p>"+array[index].name+"</p></dd></dl><ul><li><p>￥"+array[index].price+"</p><h1>"+array[index].class+"</h1> </li> <li><span class='jian'>-</span><input type='text' value='"+array[index].amount+"' id='amount'><span class='jia'>+</span> </li><li><em class='zong'>￥"+array[index].price*array[index].amount+"</em></li> <li><h3>删除</h3> </li></ul>"
+		$(".name").text(array[index].name);
+		$(".cart_details").append(nhtml)
+		$(".phone").text("电话："+array[index].phone)
+		$(".jian").click(function(){
+               var amount = $(this).next().val();
+                amount--;
+                $(this).next().val(amount);
+                array[index].amount=amount
+                $.cookie("buycar",array,{expires:7,path:"/"})
+                calcation()
+	   })
+	   $(".jia").click(function(){
+	   		var amount = $(this).prev().val();
+                amount++;
+                array[index].amount=amount
+                $(this).prev().val(amount);
+                $.cookie("buycar",array,{expires:7,path:"/"})
+                calcation()
+	   })
+	   function calcation(){
+		    var $ck = $(".ck_product:not(:first):checked")
+		    var sum=0;
+		    sum = array[index].amount*array[index].price
+		    $(".zong").text("¥"+sum);
+		}
+
+	})
+
+
+	
+
+})
 
 $("#head").on("click","#checkCity",function(){
 	console.log(1)
@@ -15,6 +71,8 @@ $("#head").on("click","#checkCity",function(){
 				color:"#41ccb4"
 			})
 	})
+
+
 })
 $("#head").on("mouseleave",".cityList",function(){
 	$(".cityList").hide(0);
@@ -99,9 +157,3 @@ $("#head").on("mouseleave",".pullDownList li",function(){
 })
 
 
-$(".check_all").click(function(){
-			var state = $(this).prop("checked");
-			 $(".ck_product").prop("checked", state); 
-			 calcation();
-
-});

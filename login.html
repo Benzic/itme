@@ -5,6 +5,9 @@
 	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="dist/css/login.css">
 	<link rel="stylesheet" type="text/css" href="dist/css/base.css">
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.cookie.js"></script>
+</head>
 </head>
 <body>
 		<div id="operat">
@@ -20,7 +23,7 @@
                     <span>
                         <img src="images/login/zc1.jpg" style="margin-top: 14px;">
                         <input type="text" id="UserName" maxlength="20" name="UserName" placeholder="用户名/手机/邮箱" class="name">
-                        <span class=""></span>
+                        <span class="">账户名不能为空</span>
                     </span>
                 </p>
 
@@ -28,7 +31,7 @@
                     <span>
                         <img src="images/login/zc2.jpg" style="margin-top: 14px;">
                         <input type="password" name="Password" maxlength="20" class="password">
-                        <span class="" ></span>
+                        <span class="" >密码不能为空</span>
                     </span>
                 </p>
 
@@ -38,8 +41,8 @@
                 </p>
 
                 <p class="dl">
-                    <input type="submit" value="立即登录">
-                    <span>还没有GO佳居账号<a href="#" >立即注册&gt;</a></span>
+                    <input type="submit" value="立即登录" id="btn">
+                    <span>还没有GO佳居账号<a href="register.html" >立即注册&gt;</a></span>
                 </p>
             </div>
 		</div>
@@ -73,4 +76,5 @@
     </div>
 
 </body>
+<script type="text/javascript" src="js/login.js"></script>
 </html>

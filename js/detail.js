@@ -1,5 +1,128 @@
 $("#bottom").load("footer.html");
 $("#head").load("head.html");
+
+$(function(){
+	$.cookie.json = true;
+    _passager = $.cookie("passager") || [];
+    var lenw = _passager.length;
+    var htmlm=""
+    console.log(_passager)
+    if (_passager!=[]) {
+    	htmlm="<a href='#'>"+_passager[lenw-1].name+"</a>";
+    	$("#loginw").html("")
+    	$("#loginw").append(htmlm)
+    	htmlm=""
+	}
+
+	var flyer = null;
+    var _price = null;
+    var _pic = null;
+    var _name  = null;
+    var _id = null;
+    var _class = null;
+    var count = 0;
+    var phone=null;
+    var dianjia = null;
+    var offset = $("#end").offset();
+            $.ajax({
+                url:"http://www.bianxia.top/demo/selectmusic/product.php",
+                data:{action:"read"},
+                success:function(data){
+                        var nn = data.substring(213,1512);
+                        var inx = nn.indexOf("null");
+                        var nar = nn.replace(/,null/gi, "")
+                        var array = JSON.parse(nar);
+                        var html = "";
+                        $.cookie.json = true;
+                        console.log(array)
+                        var _products = $.cookie("products")||[];
+                        $.each(_products,function(index,element){
+                            _id=element.id;
+                        });
+                        console.log(_products)
+                        $.each(array,function(index){
+                            if(array[index].id==_id){
+                                $(".dianjia").text(array[index].shangjia)
+                                $(".name").text(array[index].name)
+                                $(".phone").html("<img src='images/detail/phone.png'>"+array[index].phone)
+                                $(".price").text("¥"+array[index].price)
+                                $(".class").text(array[index].class)
+                                _price=array[index].price;
+                                _pic = array[index].src_pic;
+                                _name = array[index].name;
+                                _class = array[index].class;
+                                phone=array[index].phone;
+                                dianjia = array[index].shangjia;
+                             	$(".liuyan").text(array[index].liuyan)
+                                $(".pic").attr("src",array[index].src_pic)
+                                $(".pic1").attr("src",array[index].src_sc1)
+                                $(".pic2").attr("src",array[index].src_sc2)
+                            }
+                            
+                               
+
+
+
+                        })
+                         $(".btn").click(function(e){
+                         		count++;
+                                    scookie();
+                                    var addcar = $(this);
+                                    img = _pic;
+                                    flyer = $('<img class="u-flyer" style="width:30px; height:30px" src="'+img+'">');
+                                    flyer.fly({
+                                        start: {
+                                            left: event.pageX,
+                                            top: event.pageY
+                                        },
+                                        end: {
+                                            left: offset.left+10,
+                                            top: offset.top+10,
+                                            width: 0,
+                                            height: 0
+                                        }
+                                    })
+                                })
+                         $("#car").text(count);
+                       console.log(count)
+
+                     }
+             })
+
+                function scookie(){
+                        $.cookie.json = true;
+                        var _products = $.cookie("buycar") || [];
+                        var index = exists(_id,_products);
+                        if (index===-1) {
+                        _products.push({
+                            id:_id,
+                            amount:1,
+                            price:_price,
+                            pic : _pic,
+                            name:_name,
+                            class:_class,
+                            phone:phone,
+                            dianjia:dianjia
+                        })
+                        console.log(_class)
+                        }else{
+                            _products[index].amount++;
+                        }
+                        console.log(_products);
+                            $.cookie("buycar",_products,{
+                                expires:7,path:"/"
+                            });
+                        function exists(_id,array){
+                            for (var i = 0; i < array.length; i++) {
+                                if (array[i].id===_id) {
+                                    return i;
+                                }
+                            }
+                            return -1;
+                        }
+                }
+})
+
 $("#head").on("click","#checkCity",function(){
 	console.log(1)
 	$(".cityList").show();

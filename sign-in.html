@@ -16,13 +16,14 @@
 		<div id="main">
 			<img src="images/login/zc.jpg" class="img1">
 			<div class="loginDiv">
-			<form>
+			<form method="post">
                 <p class="loginP">
                    <span>
                        <img src="images/sign-in/zc1.jpg" style="margin-top: 14px;">
                        <input type="text" id="userName" maxlength="20" name="UserName" placeholder="请输入用户名" class="name">
                        <i class="userinfo" ><img src="images/register/pass.jpg">用户名可用,一经注册不可修改</i>
                        <i class="userinfo2" ><img src="images/register/error.jpg" class="img2">用户名不能为空</i>
+                       <i class="userinfo1" ><img src="images/register/error.jpg" class="img2">用户名已存在</i>
                    </span>
                </p>
                <p class="loginP">
@@ -31,6 +32,7 @@
                        <input type="text" id="phone" maxlength="11" name="phone" placeholder="请输入手机号" class="phone">
                        <i class="userinfo3" ><img src="images/register/pass.jpg">手机号可用</i>
                        <i class="userinfo4" ><img src="images/register/error.jpg" class="img2">手机号格式不正确!</i>
+                       <i class="userinfo10" ><img src="images/register/error.jpg" class="img2">电话号码已存在</i>
                    </span>
                </p>
                 <p class="loginP cc">
@@ -64,8 +66,8 @@
                </p>
                
                <p class="dl">
-                   <input type="button" value="免费注册" id="btn">
-                   <span>我已有账号<a href="#" >立即登录&gt;</a></span>
+                   <input type="submit" value="免费注册" id="btn" disabled="disabled" style="background: rgb(153, 153, 153);cursor:default">
+                   <span>我已有账号<a href="login.html" >立即登录&gt;</a></span>
                </p>
               </form> 
             </div>

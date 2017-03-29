@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="dist/css/buycar.css">
 	<link rel="stylesheet" type="text/css" href="dist/css/base.css">
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-	
+	 <script type="text/javascript" src="js/jquery.cookie.js"></script>
 </head>
 <body>
 	<div id="head">
@@ -31,47 +31,50 @@
                 <p><span>单价</span><span>数量</span><span>总计</span><span>操作</span></p>
             </div>
             <div class="third-part">
-                <p>
-                    <input type="checkbox" class="ck_product">
-                    <a href="#" class="a2">GO佳居奥莱馆</a>
-                    <span class="span1">电话：0512-82278555</span>
+                <div class="cart" style="height:auto">
+                    <p>
+                        <input type="checkbox" class="ck_product">
+                        <a href="#" class="a2 name">GO佳居奥莱馆</a>
+                        <span class="span1 phone">电话：0512-82278555</span>
 
-                        <img src="images/buycar/cart.png" alt="GO佳居奥莱馆">
-                        <a href="#" class="kefu">QQ客服</a>
-                </p>
-                <div class="cart_details">
-                    <input type="checkbox" class="ck_product">
-                    <dl>
-                        <dt><img src="images/buycar/1433668b-9b61-46b2-b769-1641ea6698a2.jpg" alt="自由格调皮质床"></dt>
-                        <dd>
-                            <p>自由格调皮质床</p>    
-                        </dd>
-                    </dl>
-                    <ul>
-                        <li>
-                            <p>￥3580.00</p>
-                            <h1>床</h1>
-                        </li>
-                        <li>
-                            <span>-</span><input type="text" value="4"><span>+</span>
-                        </li>
-                        <li>
-                            <em>￥3580.00</em>
-                        </li>
-                        <li>
-                            
-                            <h3>删除</h3>
-                        </li>
-                    </ul>
+                            <img src="images/buycar/cart.png" alt="GO佳居奥莱馆">
+                            <a href="#" class="kefu">QQ客服</a>
+                    </p>
+                    <div class="cart_details">
+                        <!-- <input type="checkbox" class="ck_product">
+                        <dl>
+                            <dt><img src="images/buycar/1433668b-9b61-46b2-b769-1641ea6698a2.jpg" alt="自由格调皮质床"></dt>
+                            <dd>
+                                <p>自由格调皮质床</p>    
+                            </dd>
+                        </dl>
+                        <ul>
+                            <li>
+                                <p>￥3580.00</p>
+                                <h1>床</h1>
+                            </li>
+                            <li>
+                                <span>-</span><input type="text" value="4"><span>+</span>
+                            </li>
+                            <li>
+                                <em>￥3580.00</em>
+                            </li>
+                            <li>
+                                
+                                <h3>删除</h3>
+                            </li>
+                        </ul> -->
+                    </div> 
                 </div>
+               
                 <div class="del">
                     <a href="#">删除指定产品</a>
                 </div>
                 <div class="collect">
                     <span id="totalNumber">商品数量总计：<strong>4</strong> 件</span>
                     <span id="totalMoney">总计金额：<em>￥3580.00</em></span>
-                    <a href="#">继续购物</a>
-                    <a id="btnInquery" style="cursor:pointer;">批量咨询</a>
+                    <a href="list.html">继续购物</a>
+                    <a id="btnInquery" style="cursor:pointer;" href="order.html">批量咨询</a>
                 </div>
                 <div class="hot_sale">
                 <h2>品牌特卖</h2>
