@@ -6,13 +6,12 @@ $(function(){
     _passager = $.cookie("passager") || [];
     var lenw = _passager.length;
     var htmlm=""
-    console.log(_passager)
     if (_passager!=[]) {
-    	htmlm="<a href='#'>"+_passager[lenw-1].name+"</a>";
+    	htmlm="<a href='#'>"+_passager[0].name+"</a>";
     	$("#loginw").html("")
     	$("#loginw").append(htmlm)
     	htmlm=""
-	}
+    }
 
 	var flyer = null;
     var _price = null;
@@ -20,7 +19,7 @@ $(function(){
     var _name  = null;
     var _id = null;
     var _class = null;
-    var count = 0;
+    var count = 1;
     var phone=null;
     var dianjia = null;
     var offset = $("#end").offset();
@@ -65,26 +64,29 @@ $(function(){
 
                         })
                          $(".btn").click(function(e){
+                         	  console.log(count)
+	                        $("#head").find("#car").text(count)
+	                       console.log(count)
+	                       $("#head").find(".gwc p").text(count);
                          		count++;
-                                    scookie();
-                                    var addcar = $(this);
-                                    img = _pic;
-                                    flyer = $('<img class="u-flyer" style="width:30px; height:30px" src="'+img+'">');
-                                    flyer.fly({
-                                        start: {
-                                            left: event.pageX,
-                                            top: event.pageY
-                                        },
-                                        end: {
-                                            left: offset.left+10,
-                                            top: offset.top+10,
-                                            width: 0,
-                                            height: 0
-                                        }
-                                    })
+                                scookie();
+                                var addcar = $(this);
+                                img = _pic;
+                                flyer = $('<img class="u-flyer" style="width:30px; height:30px" src="'+img+'">');
+                                flyer.fly({
+                                    start: {
+                                        left: event.pageX,
+                                        top: event.pageY
+                                    },
+                                    end: {
+                                        left: offset.left+10,
+                                        top: offset.top+10,
+                                        width: 0,
+                                        height: 0
+                                    }
                                 })
-                         $("#car").text(count);
-                       console.log(count)
+                            })
+
 
                      }
              })

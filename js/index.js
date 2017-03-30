@@ -1,10 +1,375 @@
 $(function(){
+		var products = {
+	    lists : [
+	        {
+	            name: ['卧室家具'],
+	            product:['全部', '整体衣帽间', '床', '床垫', '床头柜', '衣柜', '梳妆台','穿衣镜', '衣帽架', '斗柜', '床尾凳', '妆凳', '妆镜', '枕头']
+	        },
+	        {
+	            name:['客厅家具'],
+	            product:['全部','罗汉床', '茶几', '壁炉', '视听柜', '隔厅柜', '贵妃椅', '组合柜','电视柜', '沙发', '沙发背柜', '电话架', '装饰柜', '居家椅', '屏风','吊柜']
+	        },
+	        {
+	            name: ['餐厅家具'],
+	            product:['全部', '餐桌', '餐椅', '餐车', '餐边柜', '酒柜', '餐桌椅','酒吧台', '酒吧椅']
+	        },
+	        {
+	            name: ['书房家具'],
+	            product:['全部', '书桌椅', '书柜', '书报架', '电脑桌']
+	        },
+	        {     
+	            name: ['门厅家具'],
+	            product:['全部', '盆景架', '鞋柜', '门柜', '博古架','玄关','交椅']
+	        },
+	        {
+	            name: ['儿童家具'],
+	            product:['全部', '儿童椅', '儿童床', '儿童衣柜', '学习书桌','儿童套房']
+	        },
+	        {
+	            name: ['休闲家具'],
+	            product: ['全部', '茶桌/茶台', '摇椅', '豆袋沙发', '沙发床','沙滩椅','吊椅','折叠椅','休闲椅','麻将桌']
+	        },
+	        {
+	            name: ['户外家具'],
+	            product: ['全部', '凉亭', '帐篷', '秋千', '长椅','花园桌','太阳伞','休闲桌椅','躺椅']
+	        },
+	        {
+	            name: ['酒店家具'],
+	            product: ['全部', '酒店卧房', '酒店客厅', '酒店餐厅', '酒店休闲','酒店办公','酒店套房']
+	        },
+	        {
+	            name: ['工程家具'],
+	            product: ['全部', '足浴家具', '浴场家具', '咖啡厅家具', '酒吧家具','KTV家具','寺庙家具','茶楼家具','门窗系列','遮阳系列']
+	        },
+	        {   
+	            name: ['红木家具'],
+	            product: ['全部', '榆木古典', '茶台', '椅凳', '桌案','床榻','柜架','工艺品','办公台']
+	        },
+	        {
+	            name: ['办公家具'],
+	            product: ['全部', '足浴家具', '浴场家具', '咖啡厅家具', '酒吧家具','KTV家具','寺庙家具','茶楼家具','门窗系列','遮阳系列']
+	        },
+	        {
+	            name: ['定制家具'],
+	            product: ['全部', '榆木古典', '茶台', '椅凳', '桌案','床榻','柜架','工艺品','办公台']
+	        },
+	        {
+	            name: ['学校用具'],
+	            product: ['全部', '盆景架', '鞋柜', '门柜', '博古架','玄关','交椅']
+	        }
+	    ],
+	    others:[
+	        {
+	           name: '博纳方丹',
+	           image:'images/db02da09-a339-4ea5-95b8-d5b0814bece0.jpg'
+	        },
+	        {
+	           name: '欧兰格',
+	           image:'images/744cd780-a1b4-404b-b0ed-8656f0f48583.jpg'
+	        },
+	        {
+	           name: '凯旋至尊',
+	           image:'images/a4ae95ae-f779-4916-bcb2-574f4d310678.jpg' 
+	       },
+	       {
+	           name: '好风景',
+	           image:'images/a4b48f56-cd72-4cb3-ac3a-a739ac180db8.jpg' 
+	       }
+	       ,{
+	           name: '周家公馆家具',
+	           image:'images/78f09609-da30-48e7-b343-d1c01c6f8e17.jpg' 
+	       }
+	       ,{
+	           name: '欧柏莱',
+	           image:'images/7db45d21-434a-4dcc-a0f4-5e35abfc30e2.jpg' 
+	       },{
+	           name: '大风范',
+	           image:'images/72ed4622-d662-4950-9cca-8a5f27837961.jpg' 
+	       }
+	       ,{
+	           name: '桐趣家具',
+	           image:'images/548e7056-a1ee-4dfe-903f-881fd74965d8.jpg' 
+	       }
+	    ]
+	}
+	var htmlart = template('thirdNav', products);
+	$('.pudownList').html(htmlart);
+
+	var products2 = {
+		lists: [
+				[
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["福园佳居"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["华鸿红木"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["假日色恩林"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]}
+				],
+				[
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["福园佳居"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["华鸿红木"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["假日色恩林"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]}
+				],
+				[
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["福园佳居"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["华鸿红木"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["假日色恩林"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]}
+				],
+				[
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["福园佳居"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["华鸿红木"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["假日色恩林"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]}
+				],
+				[
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["福园佳居"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["华鸿红木"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["假日色恩林"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]}
+				],
+				[
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["福园佳居"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["华鸿红木"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["假日色恩林"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]}
+				],
+				[
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["福园佳居"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["华鸿红木"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["假日色恩林"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]}
+				],
+				[
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["福园佳居"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["华鸿红木"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["假日色恩林"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]}
+				],
+				[
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["福园佳居"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["华鸿红木"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["假日色恩林"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]}
+				],
+				[
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["福园佳居"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["华鸿红木"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["假日色恩林"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]}
+				],
+				[
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["福园佳居"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["华鸿红木"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["假日色恩林"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]},
+				   {name:["和木之家"],
+				   images:["images/0bdbfc27-9286-4703-8b2e-1c125d289e6a.jpg",
+				   "images/ec36c5dd-290a-496d-b821-3d6bfdc7eae9.jpg"]}
+				]
+			]
+
+	}
+	var htmlart2 = template('pro', products2);
+	$('.brand_bottom').append(htmlart2);
+	$(".brand_left:eq(0)").show();
+
+	var products3={
+		lists:[{
+
+			},{
+				
+			},{
+				
+			},{
+				
+			},{
+				
+			},{
+				
+			},{
+				
+			},{
+				
+			},{
+				
+			},{
+				
+			}]
+	}
+	var htmlart3 = template('pro2', products3);
+	$('.product_bottom').html(htmlart3);
+	$(".products-box:eq(0)").show();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	$.cookie.json = true;
     _passager = $.cookie("passager") || [];
     var lenw = _passager.length;
     var htmlm=""
     if (_passager!=[]) {
-    	htmlm="<a href='#'>"+_passager[lenw-1].name+"</a>";
+    	htmlm="<a href='#'>"+_passager[0].name+"</a>";
     	$("#loginw").html("")
     	$("#loginw").append(htmlm)
     	htmlm=""

@@ -7,7 +7,7 @@ $(function(){
     var htmlm=""
     console.log(_passager)
     if (_passager!=[]) {
-    	htmlm="<a href='#'>"+_passager[lenw-1].name+"</a>";
+    	htmlm="<a href='#'>"+_passager[0].name+"</a>";
     	$("#loginw").html("")
     	$("#loginw").append(htmlm)
     	htmlm=""

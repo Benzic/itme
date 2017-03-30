@@ -5,13 +5,13 @@ $(function(){
     _passager = $.cookie("passager") || [];
     var lenw = _passager.length;
     var htmlm=""
-    console.log(_passager)
+    console.log(_passager[0])
     if (_passager!=[]) {
-    	htmlm="<a href='#'>"+_passager[lenw-1].name+"</a>";
+    	htmlm="<a href='#'>"+_passager[0].name+"</a>";
     	$("#loginw").html("")
     	$("#loginw").append(htmlm)
     	htmlm=""
-	}
+    }
 	 $.ajax({
                     url:"http://www.bianxia.top/demo/selectmusic/product.php",
                     data:{action:"read"},
@@ -55,7 +55,6 @@ $(function(){
                                 }
                                 return -1;
                             }
-                            console.log(1111111111);
                         });
                     }
       });
