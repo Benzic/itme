@@ -2,14 +2,18 @@ $(function(){
 	$("#userName").blur(function(){
 
 		var username = $("#userName").val();
-		var str = /^[\u4E00-\u9FA5A-Za-z][\u4E00-\u9FA5A-Za-z0-9]+$/;
+		var str = /^[^!@#$%^&*():;''"",./?+_=-\\`~|]{2,18}$/;
 		if (username=="") {
 			$(".userinfo2").show();
 			$(".userinfo").hide();
             $(".userinfo1").hide();
-		}else{
+		}else if(str.test(username)){
 			 checkName(username);
-		}
+		}else if(!str.test(username)){
+            $(".userinfo2").show();
+            $(".userinfo").hide();
+            $(".userinfo1").hide();
+        }
 	})
     function checkName(name){
         $.post("http://localhost/wamp/www/project/php/users.php",{userName:$("#userName").val()},
@@ -34,9 +38,13 @@ $(function(){
 			$(".userinfo4").show();
 			$(".userinfo3").hide()
             $(".userinfo10").hide()
-		}else{
+		}else if(str.test(phone)){
 			checkPhone(phone);
-		}
+		}else if(!str.test(phone)){
+            $(".userinfo4").show();
+            $(".userinfo3").hide()
+            $(".userinfo10").hide()
+        }
 	    
 	})
     function checkPhone(phone){
@@ -152,20 +160,23 @@ $(function(){
 			$(".userinfo7").show()
     	}
     })
+    function(){
+        $(this).index 
 
+    }
     $("#btn").click(function(){
         if ($("#password1").val()==$("#password2").val()&&$('#rember').is(':checked')&&$("#password1").val()!=""&&$("#password2").val()!=""&&$("#userName").val()!=""&&$("#phone").val()!="") {
                 console.log(123456)
                 $.post("http://localhost/wamp/www/project/php/register.php",{userName:$("#userName").val(),password1:$("#password1").val(),phone:$("#phone").val()},function(data){
                 console.log(data);
                 if (data.status===1) {
+                    alert("注册成功")
                     console.log("成功")
                     window.location = "login.html"
                     $("#userName").val("");
                     $("#password1").val("");
                     $("#password2").val("");
-                    $("#phone").val("");
-                    alert("注册成功")
+                    $("#phone").val(""); 
                 }else if(data.status===0){
                     alert("注册失败")
                     $("#userName").val("");

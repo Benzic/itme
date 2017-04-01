@@ -18,12 +18,16 @@ $(function(){
 				 calcation();
 
 	});
+	
 	var array = $.cookie("buycar") || [];
 
+	if (array.length!=0) {
+		$(".cart").show();
+	}
 	console.log(array)
    	var nhtml ="";
 	$.each(array,function(index,element){
-		nhtml = "<input type='checkbox' class='ck_product'><dl><dt><img src='"+array[index].pic+"' alt='"+array[index].name+"'></dt><dd><p>"+array[index].name+"</p></dd></dl><ul><li><p>￥"+array[index].price+"</p><h1>"+array[index].class+"</h1> </li> <li><span class='jian'>-</span><input type='text' value='"+array[index].amount+"' id='amount'><span class='jia'>+</span> </li><li><em class='zong'>￥"+array[index].price*array[index].amount+"</em></li> <li><h3>删除</h3> </li></ul>"
+		nhtml = "<input type='checkbox' class='ck_product ck1'><dl><dt><img src='"+array[index].pic+"' alt='"+array[index].name+"'></dt><dd><p>"+array[index].name+"</p></dd></dl><ul><li><p>￥"+array[index].price+"</p><h1>"+array[index].class+"</h1> </li> <li><span class='jian'>-</span><input type='text' value='"+array[index].amount+"' id='amount'><span class='jia'>+</span> </li><li><em class='zong'>￥"+array[index].price*array[index].amount+"</em></li> <li><h3 class='dell'>删除</h3> </li></ul>"
 		$(".name").text(array[index].name);
 		$(".cart_details").append(nhtml)
 		$(".phone").text("电话："+array[index].phone)
@@ -49,8 +53,28 @@ $(function(){
 		    sum = array[index].amount*array[index].price
 		    $(".zong").text("¥"+sum);
 		}
+		$(".ck1").click(function(){
+				var state = $(this).prop("checked");
+				 $(".ck2").prop("checked", state); 
+				 calcation();
+
+		});
+		$(".ck2").click(function(){
+				var state = $(this).prop("checked");
+				 $(".ck1").prop("checked", state); 
+				 calcation();
+
+		});
+		$(".del,.dell").click(function(){
+			if ($(".ck1").prop("checked")==true) {
+				$(".cart").hide();
+				array.shift();
+				$.cookie("buycar",array,{expires:7,path:"/"})
+			}
+		})
 
 	})
+	
 
 
 	

@@ -10,6 +10,7 @@
     <script type="text/javascript" src="js/template.js"></script>
 </head>
 <body>
+	<!--头部-->
 	<div id="header-w">
 		<div id="header">
 				<div class="header-login">欢迎来到GO佳居！<span id="loginw"><a href="login.html">登录</a>|<a href="register.html">免费注册</a></span></div>
@@ -26,6 +27,7 @@
 				</div>
 		</div>	
 	</div>
+	<!--第二部分-->
 	<div id="operat-w">
 		<div id="operat">
 				<a href="#" class="logo"><img src="images/logo.jpg" alt="logo" id="logo"></a>
@@ -69,6 +71,7 @@
 
 		</div>
 	</div>
+	<!--主导航-->
 	<div id="menu-Nav-w">
 		<div id="menu-Nav">
 			<ul class="menul">
@@ -84,6 +87,7 @@
 	            <li><a href="#" class="">加盟</a><img style="display: inline-block;" src="images/195a7163-c19c-4039-88ad-793e789b3458.gif" alt="品牌加盟"></li>
 	            <li><a href="#" >佳居金融</a></li>
        		</ul>
+       	<!--二级导航-->
         <div id="pullDown">
 		        <ul class="pullDownList" style="background-color: rgb(255, 255, 255);">
 		            <li class="" name="0">
@@ -145,6 +149,7 @@
 					</li>
 		        </ul>
 			</div>
+			<!--三级导航模板-->
             <script id="thirdNav" type="text/html">
                 {{each lists as value i}}
                     <div class="pudownList1 " name="{{i}}"> 
@@ -166,13 +171,16 @@
                     </div> 
                 {{/each}}
             </script>
+            <!--三级导航-->
 			<div class="pudownList">
 			</div>
 		</div>
 	</div>
+	<!--banner部分-->
 	<div id="banner-w">
 		<div id="banner">
 			<div class="banner-pic">
+					<!--banner图第一层-->
 				    <ul id="banner_img" class="" style="position: relative; left: 0px; margin-left: 0px;height: 400px;">
 							<li style="background: rgb(253, 196, 211); float: left;">
                                         <div class="child child0" >
@@ -192,7 +200,7 @@
                                         </div>
                             </li>
                     </ul>
-
+					<!--banner图第二层-->
                     <div class="container_box">
                         <ul id="banner_img2">
                             <li>
@@ -220,9 +228,10 @@
                             </li>
                         </ul>                      
                     </div>
+                    <!--banner小圆点-->
                     <div class="circles"></div>
                     </div>
-                   
+                    <!--banner右边部分-->
                     <div class="right-pic">
 		                <div class="couponScroll" >
 		                    <ul style=" width:260px;">
@@ -241,6 +250,7 @@
 
 		                </div>
                     </div>
+                     <!--banner底部部分-->
                      <div class="banner-bottom">
 		                <ul>
 		                    <li>
@@ -258,8 +268,10 @@
 			</div>
 		</div>
 	</div>
+	<!--主体部分-->
 	<div id="container-w">
 		<div id="container">
+				<!--精品阅读-->
 	            <div class="title">
 	                <div class="line"></div>
 	                <p>精品阅读<span>·READING</span></p>
@@ -303,6 +315,7 @@
 
 		</div>
 	</div>
+	<!--推荐品牌-->
 	<div id="recommend-w">
 		<div id="reconmmend">
 			<div class="title">
@@ -310,6 +323,7 @@
 	                <p>推荐品牌<span>RECOMMENDED</span></p>
 	        </div>
 	        <div class="brand_con">
+	        		<!--推荐品牌tab标签-->
                     <ul class="brand_nav">
                         <li class="" name="0">
                             <a href="javascript:void(0)" class="currenta">推荐</a>
@@ -358,6 +372,7 @@
 
                     </ul>
                    <a href="#" class="more">更多&gt;</a>
+                   <!--推荐品牌模板-->
                 <script id="pro" type="text/html">
     	           {{each lists as value i}}
                     <div class="brand_left">
@@ -387,6 +402,7 @@
                     </div>
                  {{/each}}
                 </script>
+                <!--推荐品牌右边轮播图-->
 		        <div class="brand_bottom">
                     <div class="brand_right">
                             <div class="brand_lunbo">
@@ -418,7 +434,7 @@
                        </div>
 
 
-
+						<!--推荐品牌文字轮播-->
                         </div>
                             <div class="brand_word">
                                 <h1>最新加盟留言<a href="#">MORE &gt;</a></h1>
@@ -479,6 +495,7 @@
 	        </div>
 		</div>
 	</div>
+	<!--推荐商品模板-->
     <script id="pro2" type="text/html">
            {{each lists as value i}}
             <div class="products-box">                          
@@ -579,6 +596,7 @@
              </div>
            {{/each}}
     </script>
+    <!--推荐商品-->
     <div id="product-w">
         <div id="product">
             <div class="title">
@@ -586,6 +604,7 @@
                     <p>推荐品牌<span>RECOMMENDED</span></p>
             </div>
             <div class="product_con">
+            		<!--推荐商品tab标签-->
                     <ul class="product_nav">
                         <li class="" name="0">
                             <a href="javascript:void(0)" class="currenta">推荐</a>
@@ -642,11 +661,13 @@
         </div>
         
     </div>
+    <!--加入我们-->
     <div class="join">
     	<a href="#">
                        <img src="images/1c55fa04-d539-4732-907f-65f7251ca484.jpg" >
          </a>
     </div>
+    <!--优惠券-->
     <div id="coupon-w">
     	<div id="coupon">
     		<h1>优惠券<a href="#">MORE &gt;</a></h1>
@@ -755,7 +776,8 @@
                      <p><a href="#">月星家居苏州桐泾路店</a></p>
     			</li>
     		</ul>
-	    		 <div class="laba">
+    <!--喇叭轮播部分-->
+	<div class="laba">
 	                <img src="images/icon/laba.png" alt="最新领用优惠券">
 	                <div class="laba_text">
 	                    <div class="tempWrap" style="overflow:hidden; position:relative; height:18px">
@@ -789,6 +811,7 @@
 	        </div>
 
     	</div>
+    	<!--其他信息部分-->
         <div id="information-w">
     	<div id="information">
 	    	 	<div class="shop1">
@@ -847,6 +870,7 @@
                 </div>
     	</div>
    	 </div>
+   	 <!--店铺全景展示-->
 	<div id="view">
 		<h1>优惠券<a href="#">MORE &gt;</a></h1>
 		<div class="view_box">
@@ -907,6 +931,7 @@
                 
             </div>
 	</div>
+	<!--精品商店-->
 	  <div class="shop1">
 	        <a href="#" target="_blank">
 	            <img src="images/a715ac19-b57a-4463-abf1-10dea529cadf.jpg" alt="Go佳居" title="Go佳居">
@@ -1030,6 +1055,7 @@
                 <img src="images/142775bd-d1e1-4327-9bb0-c309822db27e.jpg" alt="深圳家具展" title="深圳家具展">
             </a>
         </div>
+        <!--展会轮播-->
         <div class="show">
         	 <h1>展会<a href="#">MORE &gt;</a></h1>
         	 <div class="shows">
@@ -1137,6 +1163,7 @@
             
         </div>
 </div>
+<!--底部-->
   <div class="foot-w">
 		<div class="foot">
 	        <div>
